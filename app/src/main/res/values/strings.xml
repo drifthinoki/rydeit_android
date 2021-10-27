@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">rydeit</string>
+
+    <!-- Bottom Nav Menu strings -->
+    <string name="nav_home">首頁</string>
+    <string name="nav_purchase">申購</string>
+    <string name="nav_asset">資產</string>
+    <string name="nav_wallet">錢包</string>
+    <string name="nav_account">帳戶</string>
+
 </resources>
