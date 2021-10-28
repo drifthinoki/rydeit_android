@@ -15,4 +15,19 @@
         android:name="com.progressingtoday.rydeit.ui.purchase.PurchaseFragment"
         android:label="@string/nav_purchase"
         tools:layout="@layout/fragment_purchase" />
+    <fragment
+        android:id="@+id/navigation_asset"
+        android:name="com.progressingtoday.rydeit.ui.asset.AssetFragment"
+        android:label="@string/nav_asset"
+        tools:layout="@layout/fragment_asset" />
+    <fragment
+        android:id="@+id/navigation_wallet"
+        android:name="com.progressingtoday.rydeit.ui.wallet.WalletFragment"
+        android:label="@string/nav_wallet"
+        tools:layout="@layout/fragment_wallet" />
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.progressingtoday.rydeit.ui.account.AccountFragment"
+        android:label="@string/nav_account"
+        tools:layout="@layout/fragment_account" />
 </navigation>

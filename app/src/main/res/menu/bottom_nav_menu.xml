@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_default"
+        android:icon="@drawable/nav_home"
         android:title="@string/nav_home" />
 
     <item
         android:id="@+id/navigation_purchase"
-        android:icon="@drawable/ic_purchase_default"
+        android:icon="@drawable/nav_purchase"
         android:title="@string/nav_purchase" />
 
     <item
         android:id="@+id/navigation_asset"
-        android:icon="@drawable/ic_asset_default"
+        android:icon="@drawable/nav_asset"
         android:title="@string/nav_asset" />
 
     <item
         android:id="@+id/navigation_wallet"
-        android:icon="@drawable/ic_wallet_default"
+        android:icon="@drawable/nav_wallet"
         android:title="@string/nav_wallet" />
 
     <item
         android:id="@+id/navigation_account"
-        android:icon="@drawable/ic_account_default"
+        android:icon="@drawable/nav_account"
         android:title="@string/nav_account" />
 
 </menu>
