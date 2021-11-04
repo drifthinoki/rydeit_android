@@ -7,5 +7,6 @@
     <string name="nav_asset">資產</string>
     <string name="nav_wallet">錢包</string>
     <string name="nav_account">帳戶</string>
+    <string name="registerOrLogin">註冊 / 登入</string>
 
 </resources>

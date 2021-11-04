@@ -2,15 +2,37 @@
     <!-- Base application theme. -->
     <style name="Theme.Rydeit" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/blue_400</item>
+        <item name="colorPrimaryVariant">@color/blue_200</item>
+        <item name="colorOnPrimary">@color/neutrals_100</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/lb_300</item>
+        <item name="colorSecondaryVariant">@color/lb_100</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorOnPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+
+        <item name="android:windowBackground">@color/neutrals_100</item>
+        <item name="colorSurface">@color/blue_100</item>
     </style>
+
+    </style>
+    <!--按鈕樣式-->
+    <style name="Widget.Rydeit.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="cornerRadius">5dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:outlineAmbientShadowColor" tools:targetApi="p">?attr/colorPrimary</item>
+        <item name="android:outlineSpotShadowColor"  tools:targetApi="p">?attr/colorPrimary</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/shr_next_button_state_list_anim
+        </item>
+    </style>
+
 </resources>

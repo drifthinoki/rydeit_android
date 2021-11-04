@@ -3,8 +3,23 @@
 
     // Bottom Navigation
     <color name="nav_text_default">#5F6983</color>
-    <color name="nav_text_checked">#1E82F8</color>
+    <color name="nav_text_checked">@color/blue_400</color>
     <color name="nav_text_disable">#D8DDE9</color>
+
+    // Text Colors
+    <color name="textColorPrimary">@color/neutrals_500</color>
+
+    <color name="blue_100">#F6FAFF</color>
+    <color name="blue_200">#C3DEFF</color>
+    <color name="blue_300">#97C7FF</color>
+    <color name="blue_400">#1E82F8</color>
+
+    <color name="lb_100">#EDFFFF</color>
+    <color name="lb_300">#10ECF2</color>
+
+    <color name="neutrals_100">#FFFFFF</color>
+    <color name="neutrals_500">#212121</color>
+
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
