@@ -18,7 +18,33 @@
         <item name="colorSurface">@color/blue_100</item>
     </style>
 
+    <!--頁面標題-->
+    <style name="TextAppearance.Rydeit.Title" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
+
+    <!--輸入框標題-->
+    <style name="TextAppearance.Rydeit.TextInputLayout.Title" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <!--輸入框樣式-->
+    <style name="Widget.Rydeit.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/blue_100</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+    
     <!--按鈕樣式-->
     <style name="Widget.Rydeit.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">?attr/colorOnPrimary</item>
@@ -34,5 +60,17 @@
             @animator/shr_next_button_state_list_anim
         </item>
     </style>
+
+    <style name="Widget.Rydeit.Button.TextButton.Superlink" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+
 
 </resources>

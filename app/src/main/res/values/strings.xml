@@ -7,6 +7,13 @@
     <string name="nav_asset">資產</string>
     <string name="nav_wallet">錢包</string>
     <string name="nav_account">帳戶</string>
+    <string name="login_welcome_msg">登入 Rydeit 發財車</string>
+    <string name="login_email">電子信箱</string>
+    <string name="remember_email">記住信箱</string>
+    <string name="rydeit_hint_email">farmer@gmail.com</string>
     <string name="registerOrLogin">註冊 / 登入</string>
+    <string name="login_password">密碼</string>
+    <string name="forget_password">忘記密碼</string>
+    <string name="rydeit_hint_password">請輸入密碼</string>
 
 </resources>

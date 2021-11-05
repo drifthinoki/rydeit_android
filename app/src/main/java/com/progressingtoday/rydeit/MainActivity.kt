@@ -1,18 +1,20 @@
 package com.progressingtoday.rydeit
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.progressingtoday.rydeit.databinding.ActivityMainBinding
 
-private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         // updateNavState(isLogin = false)
 
         navView.setupWithNavController(navController)
+
+        initListener()
     }
 
     private fun updateNavState(hasLoggedIn:Boolean) {
@@ -38,6 +42,22 @@ class MainActivity : AppCompatActivity() {
         navView.menu.findItem(R.id.navigation_asset).isEnabled = false
         navView.menu.findItem(R.id.navigation_wallet).isEnabled = false
         navView.menu.findItem(R.id.navigation_account).isEnabled = false
+    }
+
+    private fun initListener() {
+        val launchLoginAccountActivity =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val data :Intent? = result.data
+                    //TODO: update bottom nav state after user has logged in
+                }
+            }
+
+        binding.loginButton.setOnClickListener {
+            val intent = Intent(this, LoginAccountActivity::class.java)
+            launchLoginAccountActivity.launch(intent)
+            overridePendingTransition(R.anim.slide_in_left,  R.anim.no_animation)
+        }
     }
 
 
