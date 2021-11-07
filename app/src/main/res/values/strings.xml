@@ -15,5 +15,8 @@
     <string name="login_password">密碼</string>
     <string name="forget_password">忘記密碼</string>
     <string name="rydeit_hint_password">請輸入密碼</string>
+    <string name="next">繼續</string>
+    <string name="register_welcom_msg">第一次使用？</string>
+    <string name="register_account">註冊帳號</string>
 
 </resources>

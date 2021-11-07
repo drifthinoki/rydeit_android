@@ -13,7 +13,8 @@ import com.progressingtoday.rydeit.databinding.ViewTextInputLayoutBinding
 class CustomTextInputLayout @JvmOverloads constructor(
     context: Context, val attrs:AttributeSet? = null, defStyleAttr: Int = 0
 ): LinearLayout(context, attrs, defStyleAttr) {
-    private lateinit var binding: ViewTextInputLayoutBinding
+
+    var binding: ViewTextInputLayoutBinding
 
     init {
         val inflater = LayoutInflater.from(context)

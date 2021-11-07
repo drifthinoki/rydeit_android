@@ -16,6 +16,7 @@
 
         <item name="android:windowBackground">@color/neutrals_100</item>
         <item name="colorSurface">@color/blue_100</item>
+        <item name="colorOnSurface">@color/blue_300</item>
     </style>
 
     <!--頁面標題-->
@@ -23,6 +24,12 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <!--頁面內文-->
+    <style name="TextAppearance.Rydeit.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <!--輸入框標題-->
@@ -34,6 +41,8 @@
 
     <!--輸入框樣式-->
     <style name="Widget.Rydeit.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/rydeit_text_input_layout_height</item>
         <item name="boxBackgroundColor">@color/blue_100</item>
         <item name="boxStrokeWidth">0dp</item>
         <item name="boxStrokeWidthFocused">0dp</item>
@@ -53,18 +62,18 @@
         <item name="cornerRadius">5dp</item>
         <item name="android:paddingTop">10dp</item>
         <item name="android:paddingBottom">10dp</item>
-        <item name="backgroundTint">?attr/colorPrimary</item>
         <item name="android:outlineAmbientShadowColor" tools:targetApi="p">?attr/colorPrimary</item>
         <item name="android:outlineSpotShadowColor"  tools:targetApi="p">?attr/colorPrimary</item>
         <item name="android:stateListAnimator" tools:ignore="NewApi">
             @animator/shr_next_button_state_list_anim
         </item>
+        <item name="android:backgroundTint">@color/rydeit_btn_bg_color_selector</item>
+        <item name="minHeight">@dimen/rydeit_button_min_height</item>
     </style>
 
     <style name="Widget.Rydeit.Button.TextButton.Superlink" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">?attr/colorPrimary</item>
-        <item name="android:letterSpacing">0.1</item>
-        <item name="android:textSize">13dp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:minHeight">0dp</item>
         <item name="android:minWidth">0dp</item>
         <item name="android:insetTop">0dp</item>

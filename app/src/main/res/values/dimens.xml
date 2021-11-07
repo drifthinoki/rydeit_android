@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rydeit_text_input_layout_height">46dp</dimen>
+    <dimen name="rydeit_button_min_height">46dp</dimen>
+</resources>

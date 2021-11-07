@@ -63,6 +63,7 @@
         android:layout_marginTop="40dp">
 
         <com.progressingtoday.rydeit.ui.CustomTextInputLayout
+            android:id="@+id/email_custom_text_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -120,15 +121,14 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:letterSpacing="0.1"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_text_input_layout"
             style="@style/Widget.Rydeit.TextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/password_text_input_title"
             android:layout_marginTop="5dp"
             android:hint=" "
@@ -137,7 +137,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
                 android:paddingTop="12dp"
                 android:inputType="textPassword"
                 android:hint="@string/rydeit_hint_password"
@@ -147,7 +147,41 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cl_password_text_input"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_v_5"
+        app:layout_constraintRight_toRightOf="@id/guideline_v_95"
+        android:layout_marginTop="40dp"
+        style="@style/Widget.Rydeit.Button"
+        android:enabled="false"
+        android:text="@string/next"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/next_button">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_welcom_msg"
+            android:textAppearance="@style/TextAppearance.Rydeit.Body"/>
+
+        <Button
+            android:id="@+id/register_account_button"
+            style="@style/Widget.Rydeit.Button.TextButton.Superlink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_account"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
