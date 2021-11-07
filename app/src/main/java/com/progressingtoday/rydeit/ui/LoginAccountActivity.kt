@@ -1,10 +1,13 @@
-package com.progressingtoday.rydeit
+package com.progressingtoday.rydeit.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
+import com.progressingtoday.rydeit.LoginAccountItemType
+import com.progressingtoday.rydeit.LoginAccountViewModel
+import com.progressingtoday.rydeit.R
 import com.progressingtoday.rydeit.config.Constants.DEBUG
 import com.progressingtoday.rydeit.databinding.ActivityLoginAccountBinding
 
@@ -23,7 +26,8 @@ class LoginAccountActivity : AppCompatActivity() {
         binding = ActivityLoginAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider.AndroidViewModelFactory(application).create(LoginAccountViewModel::class.java)
+        viewModel = ViewModelProvider.AndroidViewModelFactory(application).create(
+            LoginAccountViewModel::class.java)
 
         initListener()
         registerLifeCycleObserver()
@@ -39,7 +43,7 @@ class LoginAccountActivity : AppCompatActivity() {
 
         emailInputTextLayout.editText?.doAfterTextChanged {
             val email = it.toString()
-            if (DEBUG) Log.e(TAG, "afterTextChanged Email: $email")
+            if (DEBUG) Log.e(TAG, "input text email: $email")
             viewModel.updateLoginAccountItem(LoginAccountItemType.EMAIL, email)
         }
 
@@ -47,9 +51,14 @@ class LoginAccountActivity : AppCompatActivity() {
 
         passwordInputTextLayout.editText?.doAfterTextChanged {
             val password = it.toString()
-            if (DEBUG) Log.e(TAG, "afterTextChanged Password: $password")
+            if (DEBUG) Log.e(TAG, "input text password: $password")
             viewModel.updateLoginAccountItem(LoginAccountItemType.PASSWORD, password)
         }
+
+        binding.nextButton.setOnClickListener {
+            viewModel.login()
+        }
+
     }
 
     private fun registerLifeCycleObserver() {

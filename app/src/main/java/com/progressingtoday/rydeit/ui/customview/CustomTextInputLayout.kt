@@ -1,4 +1,4 @@
-package com.progressingtoday.rydeit.ui
+package com.progressingtoday.rydeit.ui.customview
 
 import android.content.Context
 import android.content.res.Resources

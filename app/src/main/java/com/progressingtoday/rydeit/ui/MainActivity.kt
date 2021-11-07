@@ -1,4 +1,4 @@
-package com.progressingtoday.rydeit
+package com.progressingtoday.rydeit.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.progressingtoday.rydeit.R
 import com.progressingtoday.rydeit.databinding.ActivityMainBinding
 
 
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener {
             val intent = Intent(this, LoginAccountActivity::class.java)
             launchLoginAccountActivity.launch(intent)
-            overridePendingTransition(R.anim.slide_in_left,  R.anim.no_animation)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.no_animation)
         }
     }
 
