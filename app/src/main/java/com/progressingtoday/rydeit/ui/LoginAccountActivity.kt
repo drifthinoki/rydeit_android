@@ -10,6 +10,7 @@ import com.progressingtoday.rydeit.LoginAccountViewModel
 import com.progressingtoday.rydeit.R
 import com.progressingtoday.rydeit.config.Constants.DEBUG
 import com.progressingtoday.rydeit.databinding.ActivityLoginAccountBinding
+import com.progressingtoday.rydeit.helper.DialogHelper
 
 
 class LoginAccountActivity : AppCompatActivity() {
@@ -64,6 +65,15 @@ class LoginAccountActivity : AppCompatActivity() {
     private fun registerLifeCycleObserver() {
         viewModel.isInputTextValid.observe(this) {
             binding.nextButton.isEnabled = it
+        }
+
+        viewModel.isLoginSuccess.observe(this) { isSuccess ->
+            isSuccess?.let {
+                if (!it) {
+                    DialogHelper.showDialog(this, DialogHelper.DialogType.LOGIN_FAIL)
+                }
+            }
+
         }
     }
 

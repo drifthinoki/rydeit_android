@@ -18,6 +18,7 @@ class LoginAccountViewModel(application: Application):AndroidViewModel(applicati
     private val TAG = this::class.java.simpleName
     private val loginAccountItem = LoginAccountItem.empty()
     var isInputTextValid: MutableLiveData<Boolean> = MutableLiveData(false)
+    var isLoginSuccess: MutableLiveData<Boolean?> = MutableLiveData(null)
 
     fun updateLoginAccountItem(loginAccountItemType: LoginAccountItemType, value:String) {
         when(loginAccountItemType) {
@@ -36,6 +37,11 @@ class LoginAccountViewModel(application: Application):AndroidViewModel(applicati
             .subscribe( { loginResponse: Login? ->
                 if (DEBUG) Log.e(TAG, "login API state: success")
                 if (DEBUG) Log.e(TAG, "login API content: ${loginResponse.toString()}")
+
+                loginResponse?.let { login ->
+                    if (DEBUG) Log.e(TAG, "login API isSuccess: ${login.isSuccess}")
+                    isLoginSuccess.postValue(login.isSuccess)
+                }
 
             }, {throwable: Throwable ->
                 if (DEBUG) Log.e(TAG, "login API state: fail")

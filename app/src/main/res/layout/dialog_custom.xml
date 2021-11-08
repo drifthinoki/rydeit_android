@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="18dp"
+            android:background="@drawable/dialog_custom_bg">
+
+            <ImageView
+                android:id="@+id/dialog_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_account_notice"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/dialog_title"
+                style="@style/TextAppearance.Rydeit.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="標題"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/dialog_msg"
+                style="@style/TextAppearance.Rydeit.Dialog.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="內容"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/dialog_main_btn"
+                style="@style/Widget.Rydeit.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="按鈕"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

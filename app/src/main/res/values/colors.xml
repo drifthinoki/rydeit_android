@@ -20,6 +20,8 @@
     <color name="neutrals_100">#FFFFFF</color>
     <color name="neutrals_500">#212121</color>
 
+    <color name="gb_500">#5F6983</color>
+
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

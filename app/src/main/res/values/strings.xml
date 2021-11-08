@@ -18,5 +18,8 @@
     <string name="next">繼續</string>
     <string name="register_welcom_msg">第一次使用？</string>
     <string name="register_account">註冊帳號</string>
+    <string name="dialog_login_fail_title">登入失敗</string>
+    <string name="dialog_login_fail_msg">信箱或密碼錯誤，請重新輸入</string>
+    <string name="btn_text_close">關閉</string>
 
 </resources>
