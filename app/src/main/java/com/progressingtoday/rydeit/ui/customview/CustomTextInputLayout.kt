@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Resources
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.LinearLayout
 import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.textfield.TextInputLayout
@@ -28,21 +29,28 @@ class CustomTextInputLayout @JvmOverloads constructor(
 
         val attributes = context.theme.obtainStyledAttributes(
             attrs,
-            R.styleable.TextInputLayoutView,
+            R.styleable.CustomTextInputLayout,
             0, 0
         )
 
-        binding.textInputTitle.text = attributes.getString(R.styleable.TextInputLayoutView_title)
-        binding.textInputEditText.hint = attributes.getString(R.styleable.TextInputLayoutView_hint)
-        val inputTypeString = attributes.getString(R.styleable.TextInputLayoutView_inputType)
+        binding.title.text = attributes.getString(R.styleable.CustomTextInputLayout_title)
+        binding.editText.hint = attributes.getString(R.styleable.CustomTextInputLayout_hint)
+        val inputTypeString = attributes.getString(R.styleable.CustomTextInputLayout_inputType)
         print(inputTypeString)
         val inputTypeInt = when(inputTypeString) {
             "textEmailAddress" -> 21
             "textPassword" -> 81
             "phone" -> 3
+            "text" -> 1
             else -> throw Resources.NotFoundException()
         }
-        binding.textInputEditText.inputType = inputTypeInt
+        binding.editText.inputType = inputTypeInt
+        val buttonText = attributes.getString(R.styleable.CustomTextInputLayout_buttonText)
+        buttonText?.let {
+            binding.divider.visibility = View.VISIBLE
+            binding.editTextButton.visibility = View.VISIBLE
+            binding.editTextButton.text = it
+        }
 
         if (inputTypeInt == 81) {
             binding.textInputLayout.endIconMode = TextInputLayout.END_ICON_PASSWORD_TOGGLE;

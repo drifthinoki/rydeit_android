@@ -1,8 +1,11 @@
 package com.progressingtoday.rydeit.ui
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
 import com.progressingtoday.rydeit.LoginAccountItemType
@@ -11,6 +14,7 @@ import com.progressingtoday.rydeit.R
 import com.progressingtoday.rydeit.config.Constants.DEBUG
 import com.progressingtoday.rydeit.databinding.ActivityLoginAccountBinding
 import com.progressingtoday.rydeit.helper.DialogHelper
+import com.progressingtoday.rydeit.helper.UserHelper
 
 
 class LoginAccountActivity : AppCompatActivity() {
@@ -57,7 +61,7 @@ class LoginAccountActivity : AppCompatActivity() {
         }
 
         binding.nextButton.setOnClickListener {
-            viewModel.login()
+            viewModel.login(binding.checkboxRememberEmail.isChecked)
         }
 
     }
@@ -71,9 +75,22 @@ class LoginAccountActivity : AppCompatActivity() {
             isSuccess?.let {
                 if (!it) {
                     DialogHelper.showDialog(this, DialogHelper.DialogType.LOGIN_FAIL)
+                    binding.emailCustomTextInputLayout.binding.editText.text?.clear()
+                    binding.passwordTextInputEdittext.text?.clear()
+                } else {
+                    val intent = Intent(this, LoginVerifyActivity::class.java)
+                    startActivity(intent)
                 }
             }
 
+        }
+
+        UserHelper.user.observe(this) { user ->
+            user?.let {
+                if (user.rememberEmail) {
+                    binding.emailCustomTextInputLayout.binding.editText.setText(user.email)
+                }
+            }
         }
     }
 

@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.progressingtoday.rydeit.R
 import com.progressingtoday.rydeit.databinding.ActivityMainBinding
+import com.progressingtoday.rydeit.utils.StorageUtil
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         initListener()
+
+        // init StorageUtil
+        StorageUtil.with(application)
     }
 
     private fun updateNavState(hasLoggedIn:Boolean) {
@@ -46,17 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initListener() {
-        val launchLoginAccountActivity =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-                if (result.resultCode == Activity.RESULT_OK) {
-                    val data :Intent? = result.data
-                    //TODO: update bottom nav state after user has logged in
-                }
-            }
-
         binding.loginButton.setOnClickListener {
             val intent = Intent(this, LoginAccountActivity::class.java)
-            launchLoginAccountActivity.launch(intent)
+            startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.no_animation)
         }
     }

@@ -7,7 +7,10 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.JsonObject
 import com.progressingtoday.rydeit.api.RetrofitServiceManager
 import com.progressingtoday.rydeit.api.responses.Login
+import com.progressingtoday.rydeit.config.Constants.API_SUCCESS
 import com.progressingtoday.rydeit.config.Constants.DEBUG
+import com.progressingtoday.rydeit.helper.UserHelper
+import com.progressingtoday.rydeit.model.User
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 
 enum class LoginAccountItemType{
@@ -28,25 +31,24 @@ class LoginAccountViewModel(application: Application):AndroidViewModel(applicati
         isInputTextValid.postValue(loginAccountItem.isValid())
     }
 
-    fun login() {
-        RetrofitServiceManager.apiService
+    fun login(rememberEmail: Boolean) {
+        if ( DEBUG && API_SUCCESS) {
+            isLoginSuccess.postValue(true)
+            return
+        }
+        RetrofitServiceManager.apiServiceWithoutHeaders
             .login(
                 loginAccountItem.email,
                 loginAccountItem.password)
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe( { loginResponse: Login? ->
-                if (DEBUG) Log.e(TAG, "login API state: success")
-                if (DEBUG) Log.e(TAG, "login API content: ${loginResponse.toString()}")
-
+            .subscribe { loginResponse: Login? ->
                 loginResponse?.let { login ->
-                    if (DEBUG) Log.e(TAG, "login API isSuccess: ${login.isSuccess}")
+                    // 記住信箱
+                    val user = User(loginAccountItem.email, login.data.token, rememberEmail)
+                    UserHelper.setUser(user)
                     isLoginSuccess.postValue(login.isSuccess)
                 }
-
-            }, {throwable: Throwable ->
-                if (DEBUG) Log.e(TAG, "login API state: fail")
-                if (DEBUG) Log.e(TAG, "login API content : $throwable")
-            })
+            }
     }
 }
 

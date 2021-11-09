@@ -8,7 +8,7 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    // region 會員
+    // region 登入
     /**
      * 登入
      */
@@ -18,6 +18,12 @@ interface ApiService {
         @Field("account") account: String,
         @Field("password") password: String
     ): Observable<Login>
+
+    /**
+     * 發送信箱驗證碼
+     */
+    @GET(Constants.API_LOGIN_EMAIL_VERIFY)
+    fun loginEmailVerify(): Observable<JsonObject>
 
     // endregion
 }
