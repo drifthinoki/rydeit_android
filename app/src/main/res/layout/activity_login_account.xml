@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@id/rec_welcome_msg"
         android:layout_marginTop="40dp">
 
-        <com.progressingtoday.rydeit.ui.customview.CustomTextInputLayout
+        <com.rydeit.io.ui.customview.CustomTextInputLayout
             android:id="@+id/email_custom_text_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.progressingtoday.rydeit.ui.home.HomeFragment"
+        android:name="com.rydeit.io.ui.home.HomeFragment"
         android:label="@string/nav_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_purchase"
-        android:name="com.progressingtoday.rydeit.ui.purchase.PurchaseFragment"
+        android:name="com.rydeit.io.ui.purchase.PurchaseFragment"
         android:label="@string/nav_purchase"
         tools:layout="@layout/fragment_purchase" />
     <fragment
         android:id="@+id/navigation_asset"
-        android:name="com.progressingtoday.rydeit.ui.asset.AssetFragment"
+        android:name="com.rydeit.io.ui.asset.AssetFragment"
         android:label="@string/nav_asset"
         tools:layout="@layout/fragment_asset" />
     <fragment
         android:id="@+id/navigation_wallet"
-        android:name="com.progressingtoday.rydeit.ui.wallet.WalletFragment"
+        android:name="com.rydeit.io.ui.wallet.WalletFragment"
         android:label="@string/nav_wallet"
         tools:layout="@layout/fragment_wallet" />
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.progressingtoday.rydeit.ui.account.AccountFragment"
+        android:name="com.rydeit.io.ui.account.AccountFragment"
         android:label="@string/nav_account"
         tools:layout="@layout/fragment_account" />
 </navigation>

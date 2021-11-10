@@ -61,7 +61,7 @@
                 android:src="@drawable/nav_wallet"/>
         </LinearLayout>
 
-        <com.progressingtoday.rydeit.ui.customview.CustomTextInputLayout
+        <com.rydeit.io.ui.customview.CustomTextInputLayout
             android:id="@+id/email_verify_input_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
             app:buttonText="@string/send_verify_code"
             />
 
-        <com.progressingtoday.rydeit.ui.customview.CustomTextInputLayout
+        <com.rydeit.io.ui.customview.CustomTextInputLayout
             android:id="@+id/phone_verify_input_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
             app:inputType="text"
             app:buttonText="@string/send_verify_code"/>
 
-        <com.progressingtoday.rydeit.ui.customview.CustomTextInputLayout
+        <com.rydeit.io.ui.customview.CustomTextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
