@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginVerifyActivity">
+    tools:context=".ui.Login2faActivity">
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -68,30 +68,31 @@
             android:layout_marginTop="40dp"
             app:title="@string/verify_email"
             app:hint="@string/verify_email_hint"
-            app:inputType="text"
+            app:inputType="number"
             app:buttonText="@string/send_verify_code"
             />
 
         <com.rydeit.io.ui.customview.CustomTextInputLayout
-            android:id="@+id/phone_verify_input_text"
+            android:id="@+id/sms_verify_input_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:title="@string/verify_phone"
             app:hint="@string/verify_phone_hint"
-            app:inputType="text"
+            app:inputType="number"
             app:buttonText="@string/send_verify_code"/>
 
         <com.rydeit.io.ui.customview.CustomTextInputLayout
+            android:id="@+id/google_2fa_input_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:title="@string/google_2fa"
             app:hint="@string/google_2fa_hint"
-            app:inputType="text"/>
+            app:inputType="number"/>
 
         <Button
-            android:id="@+id/next_button"
+            android:id="@+id/verify_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -100,6 +101,7 @@
             android:text="@string/button_verify"/>
 
         <Button
+            android:id="@+id/reenter_email_password_button"
             style="@style/Widget.Rydeit.Button.TextButton.Superlink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

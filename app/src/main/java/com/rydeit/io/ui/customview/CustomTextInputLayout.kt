@@ -41,7 +41,7 @@ class CustomTextInputLayout @JvmOverloads constructor(
             "textEmailAddress" -> 21
             "textPassword" -> 81
             "phone" -> 3
-            "text" -> 1
+            "number" -> 2
             else -> throw Resources.NotFoundException()
         }
         binding.editText.inputType = inputTypeInt

@@ -32,5 +32,7 @@
     <string name="google_2fa_hint">請輸入 Google 雙重驗證碼</string>
     <string name="button_verify">進行驗證</string>
     <string name="reenter_email_password">重新輸入信箱及密碼</string>
+    <string name="dialog_verify_fail_title">驗證失敗</string>
+    <string name="dialog_verify_fail_msg">請重新發送驗證碼進行驗證 或重新輸入信箱及手機</string>
 
 </resources>

@@ -76,7 +76,7 @@ class LoginAccountActivity : AppCompatActivity() {
                     binding.emailCustomTextInputLayout.binding.editText.text?.clear()
                     binding.passwordTextInputEdittext.text?.clear()
                 } else {
-                    val intent = Intent(this, LoginVerifyActivity::class.java)
+                    val intent = Intent(this, Login2faActivity::class.java)
                     startActivity(intent)
                 }
             }
@@ -85,8 +85,9 @@ class LoginAccountActivity : AppCompatActivity() {
 
         UserHelper.user.observe(this) { user ->
             user?.let {
-                if (user.rememberEmail) {
+                if (user.isRememberEmail) {
                     binding.emailCustomTextInputLayout.binding.editText.setText(user.email)
+                    binding.checkboxRememberEmail.isChecked = user.isRememberEmail
                 }
             }
         }

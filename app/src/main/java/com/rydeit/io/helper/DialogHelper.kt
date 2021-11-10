@@ -11,19 +11,20 @@ import com.rydeit.io.databinding.DialogCustomBinding
 object DialogHelper {
 
     enum class DialogType {
-        LOGIN_FAIL;
+        LOGIN_FAIL, VERIFY_FAIL;
 
         val title:Int
             get() {
                 return when(this) {
                     LOGIN_FAIL -> R.string.dialog_login_fail_title
+                    VERIFY_FAIL -> R.string.dialog_verify_fail_title
                 }
             }
 
         val icon:Int
             get() {
                 return when(this) {
-                    LOGIN_FAIL -> R.drawable.ic_account_notice
+                    LOGIN_FAIL, VERIFY_FAIL -> R.drawable.ic_account_notice
                 }
             }
 
@@ -31,20 +32,21 @@ object DialogHelper {
             get() {
                 return when(this) {
                     LOGIN_FAIL -> R.string.dialog_login_fail_msg
+                    VERIFY_FAIL -> R.string.dialog_verify_fail_msg
                 }
             }
 
         val mainBtnText:Int
             get() {
                 return when(this) {
-                    LOGIN_FAIL -> R.string.btn_text_close
+                    LOGIN_FAIL, VERIFY_FAIL -> R.string.btn_text_close
                 }
             }
 
         val secondBtnText:Int?
             get() {
                 return when(this) {
-                    LOGIN_FAIL -> null
+                    LOGIN_FAIL, VERIFY_FAIL -> null
                 }
             }
 

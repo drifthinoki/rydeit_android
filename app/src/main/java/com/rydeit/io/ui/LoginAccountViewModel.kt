@@ -1,6 +1,7 @@
 package com.rydeit.io
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.rydeit.io.api.RetrofitServiceManager
@@ -39,14 +40,17 @@ class LoginAccountViewModel(application: Application):AndroidViewModel(applicati
                 loginAccountItem.email,
                 loginAccountItem.password)
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { loginResponse: Login? ->
+            .subscribe ({ loginResponse: Login? ->
                 loginResponse?.let { login ->
                     // 記住信箱
                     val user = User(loginAccountItem.email, login.data.token, rememberEmail)
                     UserHelper.setUser(user)
                     isLoginSuccess.postValue(login.isSuccess)
                 }
-            }
+            }, {
+                Log.e(TAG, "login api failed!")
+                isLoginSuccess.postValue(false)
+            })
     }
 }
 
