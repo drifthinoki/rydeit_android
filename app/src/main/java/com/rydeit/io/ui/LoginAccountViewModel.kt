@@ -31,7 +31,7 @@ class LoginAccountViewModel(application: Application):AndroidViewModel(applicati
     }
 
     fun login(rememberEmail: Boolean) {
-        if ( DEBUG && API_SUCCESS) {
+        if (DEBUG && API_SUCCESS) {
             isLoginSuccess.postValue(true)
             return
         }

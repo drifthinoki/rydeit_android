@@ -1,7 +1,7 @@
 package com.rydeit.io.config
 
 object Constants {
-    var DEBUG = true
+    var DEBUG = false
     var API_SUCCESS = false
 
     //API
@@ -16,4 +16,8 @@ object Constants {
     //PREF KEY
     const val PREF_FILE_KEY = " com.rydeit.io.PREFERENCE_FILE_KEY"
     const val PREF_USER = "pref_user"
+    const val PREF_PIN = "pref_pin"
+
+    // Rydeit setting
+    const val PIN_ERROR_TIMES = 5
 }

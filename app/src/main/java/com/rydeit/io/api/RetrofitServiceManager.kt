@@ -27,7 +27,7 @@ object RetrofitServiceManager {
             })
     private val headerInterceptor = object :Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {
-            val token = UserHelper.getToken()
+            val token = UserHelper.getTokenOrTmpToken()
                 ?: throw IllegalStateException("Token is not found!")
 
             val request = chain.request().newBuilder()

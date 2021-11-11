@@ -29,4 +29,14 @@ object StorageUtil {
         val value = sharePreferences.getString(key, null)
         return GsonBuilder().create().fromJson(value, T::class.java)
     }
+
+    fun storeString(key: String, value: String) {
+        sharePreferences.edit().putString(key, value)
+            .apply()
+    }
+
+    fun getString(key: String): String? {
+        return sharePreferences.getString(key, null)
+    }
+
 }

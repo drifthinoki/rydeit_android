@@ -21,51 +21,29 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95"/>
 
-    <include
-        android:id="@+id/top_bar_login"
+    <com.rydeit.io.ui.customview.LoginTopBar
+        android:id="@+id/login_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        layout="@layout/view_login_top_bar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"/>
+        app:login_top_bar_title="@string/login_title"/>
+
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="@id/guideline_v_5"
         app:layout_constraintRight_toRightOf="@id/guideline_v_95"
-        app:layout_constraintTop_toBottomOf="@id/top_bar_login"
+        app:layout_constraintTop_toBottomOf="@id/login_top_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="vertical"
         android:gravity="center_horizontal">
-
-        <LinearLayout
-            android:id="@+id/rec_welcome_msg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_welcome_msg"
-                android:textAppearance="@style/TextAppearance.Rydeit.Title"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:src="@drawable/nav_wallet"/>
-        </LinearLayout>
 
         <com.rydeit.io.ui.customview.CustomTextInputLayout
             android:id="@+id/email_verify_input_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             app:title="@string/verify_email"
             app:hint="@string/verify_email_hint"
             app:inputType="number"

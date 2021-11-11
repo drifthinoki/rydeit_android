@@ -8,7 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.rydeit.io.R
 import com.rydeit.io.databinding.ActivityMainBinding
-import com.rydeit.io.utils.StorageUtil
+import com.rydeit.io.helper.UserHelper
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,22 +29,20 @@ class MainActivity : AppCompatActivity() {
         navView.itemIconTintList = null
 
         // TODO: check user has logged in or not, if not only home item is enable.
-        // updateNavState(isLogin = false)
+//         updateNavState(hasLoggedIn = false)
 
         navView.setupWithNavController(navController)
 
         initListener()
-
-        // init StorageUtil
-        StorageUtil.with(application)
+        registerLifeCycleObserver()
     }
 
-    private fun updateNavState(hasLoggedIn:Boolean) {
+    private fun updateNavState(isLogin:Boolean) {
         val navView: BottomNavigationView = binding.navView
-        navView.menu.findItem(R.id.navigation_purchase).isEnabled = false
-        navView.menu.findItem(R.id.navigation_asset).isEnabled = false
-        navView.menu.findItem(R.id.navigation_wallet).isEnabled = false
-        navView.menu.findItem(R.id.navigation_account).isEnabled = false
+        navView.menu.findItem(R.id.navigation_purchase).isEnabled = isLogin
+        navView.menu.findItem(R.id.navigation_asset).isEnabled = isLogin
+        navView.menu.findItem(R.id.navigation_wallet).isEnabled = isLogin
+        navView.menu.findItem(R.id.navigation_account).isEnabled = isLogin
     }
 
     private fun initListener() {
@@ -52,6 +50,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, LoginAccountActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.no_animation)
+        }
+    }
+
+    private fun registerLifeCycleObserver() {
+        UserHelper.isLogin.observe(this) {
+            updateNavState(it)
         }
     }
 

@@ -9,16 +9,16 @@
     <string name="nav_account">帳戶</string>
 
     <!--登入-->
-    <string name="login_welcome_msg">登入 Rydeit 發財車</string>
+    <string name="login_title">登入 Rydeit 發財車 👋</string>
     <string name="login_email">電子信箱</string>
     <string name="remember_email">記住信箱</string>
     <string name="login_email_hint">farmer@gmail.com</string>
-    <string name="registerOrLogin">註冊 / 登入</string>
+    <string name="register_or_login">註冊 / 登入</string>
     <string name="login_password">密碼</string>
     <string name="forget_password">忘記密碼</string>
     <string name="login_password_hint">請輸入密碼</string>
     <string name="button_next">繼續</string>
-    <string name="register_welcome_msg">第一次使用？</string>
+    <string name="first_time_use">第一次使用？</string>
     <string name="register_account">註冊帳號</string>
     <string name="dialog_login_fail_title">登入失敗</string>
     <string name="dialog_login_fail_msg">信箱或密碼錯誤，請重新輸入</string>
@@ -34,5 +34,14 @@
     <string name="reenter_email_password">重新輸入信箱及密碼</string>
     <string name="dialog_verify_fail_title">驗證失敗</string>
     <string name="dialog_verify_fail_msg">請重新發送驗證碼進行驗證 或重新輸入信箱及手機</string>
+    <string name="pin_title_set_pin">設定 Pin 碼 🔒</string>
+    <string name="set_pin_subtitle">請設定您的 Pin 碼</string>
+    <string name="reset_pin">重新設定</string>
+    <string name="pin_title_enter_pin_to_unlock">輸入 Pin 碼解鎖</string>
+    <string name="pin_subtitle_set_pin">請設定您的 Pin 碼</string>
+    <string name="pin_subtitle_set_pin_again">請再次輸入 Pin 碼</string>
+    <string name="pin_subtitle_enter_your_pin">請輸入您的 Pin 碼</string>
+    <string name="forget_pin">忘記 Pin 碼？</string>
+    <string name="re_login">請重新登入</string>
 
 </resources>

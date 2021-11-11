@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rydeit.io.api.RetrofitServiceManager
+import com.rydeit.io.config.Constants
 
 enum class Login2faType {
     EMAIL, SMS, GOOGLE_2FA
@@ -38,6 +39,10 @@ class Login2faViewModel:ViewModel() {
     }
 
     fun login2FA(emailVerifyCode: String, smsVerifyCode: String, google2fa: String) {
+        if (Constants.DEBUG && Constants.API_SUCCESS) {
+            isLogin2faSuccess.postValue(true)
+            return
+        }
         RetrofitServiceManager.apiService
             .login2FA(emailVerifyCode, smsVerifyCode, google2fa)
             .subscribe({ login2fa ->

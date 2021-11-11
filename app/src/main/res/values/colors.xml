@@ -2,12 +2,13 @@
 <resources>
 
     // Bottom Navigation
-    <color name="nav_text_default">#5F6983</color>
+    <color name="nav_text_default">@color/gb_500</color>
     <color name="nav_text_checked">@color/blue_400</color>
-    <color name="nav_text_disable">#D8DDE9</color>
+    <color name="nav_text_disable">@color/gb_300</color>
 
     // Text Colors
     <color name="textColorPrimary">@color/neutrals_500</color>
+    <color name="textColorError">@color/r_400</color>
 
     <color name="blue_100">#F6FAFF</color>
     <color name="blue_200">#C3DEFF</color>
@@ -21,7 +22,10 @@
     <color name="neutrals_500">#212121</color>
 
     <color name="gb_300">#D8DDE9</color>
+    <color name="gb_400">#9FA8BF</color>
     <color name="gb_500">#5F6983</color>
+
+    <color name="r_400">#FF355C</color>
 
 
     <color name="purple_200">#FFBB86FC</color>

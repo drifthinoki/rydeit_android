@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.rydeit.io.LoginAccountItemType
 import com.rydeit.io.LoginAccountViewModel
 import com.rydeit.io.R
+import com.rydeit.io.config.Constants.API_SUCCESS
 import com.rydeit.io.config.Constants.DEBUG
 import com.rydeit.io.databinding.ActivityLoginAccountBinding
 import com.rydeit.io.helper.DialogHelper
@@ -37,7 +38,7 @@ class LoginAccountActivity : AppCompatActivity() {
     }
 
     private fun initListener() {
-        binding.topBarLoginAccount.backButton.setOnClickListener {
+        binding.loginTopBar.binding.backButton.setOnClickListener {
             finish()
             overridePendingTransition(R.anim.no_animation, R.anim.slide_out_left)
         }

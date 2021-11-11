@@ -11,6 +11,8 @@ import com.rydeit.io.R
 import com.rydeit.io.config.Constants
 import com.rydeit.io.databinding.ActivityLogin2faBinding
 import com.rydeit.io.helper.DialogHelper
+import com.rydeit.io.helper.PinInputType
+import com.rydeit.io.helper.PinHelper
 
 class Login2faActivity : AppCompatActivity() {
 
@@ -40,7 +42,7 @@ class Login2faActivity : AppCompatActivity() {
 
     private fun initListener() {
         // Top Bar 返回鍵
-        binding.topBarLogin.backButton.setOnClickListener {
+        binding.loginTopBar.binding.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
@@ -89,14 +91,13 @@ class Login2faActivity : AppCompatActivity() {
             binding.verifyButton.isEnabled = it
         }
 
-        viewModel.isLogin2faSuccess.observe(this) { isSuccess ->
-            isSuccess?.let {
-                if (!it) {
+        viewModel.isLogin2faSuccess.observe(this) { isSuccessOrNull ->
+            isSuccessOrNull?.let {
+                if (it) {
+                    PinHelper.showPinInputView(this, PinInputType.SET_NEW)
+                } else {
                     DialogHelper.showDialog(this, DialogHelper.DialogType.VERIFY_FAIL)
                     clearInputText()
-                } else {
-//                    val intent = Intent(this, Login2faActivity::class.java)
-//                    startActivity(intent)
                 }
             }
 
