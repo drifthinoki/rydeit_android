@@ -27,27 +27,15 @@ class MainActivity : AppCompatActivity() {
 
         // Inorder to user custom drawables
         navView.itemIconTintList = null
-
-        // TODO: check user has logged in or not, if not only home item is enable.
-//         updateNavState(hasLoggedIn = false)
-
         navView.setupWithNavController(navController)
 
         initListener()
         registerLifeCycleObserver()
     }
 
-    private fun updateNavState(isLogin:Boolean) {
-        val navView: BottomNavigationView = binding.navView
-        navView.menu.findItem(R.id.navigation_purchase).isEnabled = isLogin
-        navView.menu.findItem(R.id.navigation_asset).isEnabled = isLogin
-        navView.menu.findItem(R.id.navigation_wallet).isEnabled = isLogin
-        navView.menu.findItem(R.id.navigation_account).isEnabled = isLogin
-    }
-
     private fun initListener() {
         binding.loginButton.setOnClickListener {
-            val intent = Intent(this, LoginAccountActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_left, R.anim.no_animation)
         }
@@ -59,6 +47,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
-
+    private fun updateNavState(isLogin:Boolean) {
+        val navView: BottomNavigationView = binding.navView
+        navView.menu.findItem(R.id.navigation_purchase).isEnabled = isLogin
+        navView.menu.findItem(R.id.navigation_asset).isEnabled = isLogin
+        navView.menu.findItem(R.id.navigation_wallet).isEnabled = isLogin
+        navView.menu.findItem(R.id.navigation_account).isEnabled = isLogin
+    }
 }

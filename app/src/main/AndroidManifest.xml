@@ -13,9 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rydeit">
-        <activity android:name=".ui.PinActivity"></activity>
+        <activity android:name=".ui.RegisterStep1Activity"></activity>
+        <activity android:name=".ui.PinActivity" />
         <activity android:name=".ui.Login2faActivity" />
-        <activity android:name=".ui.LoginAccountActivity" />
+        <activity android:name=".ui.LoginActivity" />
         <activity
             android:name=".ui.MainActivity"
             android:launchMode="singleTop">

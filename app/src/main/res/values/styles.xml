@@ -10,4 +10,8 @@
     <declare-styleable name="LoginTopBar">
         <attr name="login_top_bar_title" format="string"/>
     </declare-styleable>
+
+    <declare-styleable name="RegisterTopBar">
+        <attr name="phase" format="integer"/>
+    </declare-styleable>
 </resources>

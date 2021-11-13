@@ -43,5 +43,13 @@
     <string name="pin_subtitle_enter_your_pin">請輸入您的 Pin 碼</string>
     <string name="forget_pin">忘記 Pin 碼？</string>
     <string name="re_login">請重新登入</string>
+    <string name="register_title">註冊 Rydeit 發財車 👋</string>
+    <string name="register_phone">手機號碼</string>
+    <string name="register_phone_hint">+886123456789</string>
+    <string name="button_next_step">下一步</string>
+    <string name="already_have_account">我已經有帳號</string>
+    <string name="go_login">前往登入</string>
+    <string name="agree_privacy_term">我已閱讀且同意</string>
+    <string name="privacy_term">隱私權政策與條款</string>
 
 </resources>

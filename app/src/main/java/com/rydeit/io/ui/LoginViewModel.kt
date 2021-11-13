@@ -10,40 +10,35 @@ import com.rydeit.io.config.Constants.API_SUCCESS
 import com.rydeit.io.config.Constants.DEBUG
 import com.rydeit.io.helper.UserHelper
 import com.rydeit.io.model.User
+import com.rydeit.io.ui.InputCheckItem
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 
-enum class LoginAccountItemType{
-    EMAIL, PASSWORD
-}
-
-class LoginAccountViewModel(application: Application):AndroidViewModel(application) {
+class LoginViewModel(application: Application):AndroidViewModel(application) {
     private val TAG = this::class.java.simpleName
-    private val loginAccountItem = LoginAccountItem.empty()
-    var isInputTextValid: MutableLiveData<Boolean> = MutableLiveData(false)
+    private val inputCheckItem = InputCheckItem(2)
+    var isInputValid: MutableLiveData<Boolean> = MutableLiveData(false)
     var isLoginSuccess: MutableLiveData<Boolean?> = MutableLiveData(null)
 
-    fun updateLoginAccountItem(loginAccountItemType: LoginAccountItemType, value:String) {
-        when(loginAccountItemType) {
-            LoginAccountItemType.EMAIL -> loginAccountItem.email = value
-            LoginAccountItemType.PASSWORD -> loginAccountItem.password = value
-        }
-        isInputTextValid.postValue(loginAccountItem.isValid())
+
+    fun updateInputValue(inputTextIndex: Int, value: String) {
+        inputCheckItem.updateValue(inputTextIndex, value)
+        isInputValid.postValue(inputCheckItem.isValid())
     }
 
-    fun login(rememberEmail: Boolean) {
+    fun login(email: String, password: String, rememberEmail: Boolean) {
         if (DEBUG && API_SUCCESS) {
             isLoginSuccess.postValue(true)
             return
         }
-        RetrofitServiceManager.apiServiceWithoutHeaders
+        RetrofitServiceManager.apiService
             .login(
-                loginAccountItem.email,
-                loginAccountItem.password)
+                email,
+                password)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe ({ loginResponse: Login? ->
                 loginResponse?.let { login ->
                     // 記住信箱
-                    val user = User(loginAccountItem.email, login.data.token, rememberEmail)
+                    val user = User(email, login.data.token, rememberEmail)
                     UserHelper.setUser(user)
                     isLoginSuccess.postValue(login.isSuccess)
                 }
@@ -51,18 +46,6 @@ class LoginAccountViewModel(application: Application):AndroidViewModel(applicati
                 Log.e(TAG, "login api failed!")
                 isLoginSuccess.postValue(false)
             })
-    }
-}
-
-class LoginAccountItem(var email:String, var password:String) {
-    companion object {
-        fun empty():LoginAccountItem {
-            return LoginAccountItem("", "")
-        }
-    }
-
-    fun isValid():Boolean {
-        return email.isNotEmpty() && password.isNotEmpty()
     }
 
 }

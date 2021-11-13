@@ -21,7 +21,7 @@ object UserHelper {
             this._user = it
         }
 
-        Log.e(TAG, "user isNull: ${_user == null}, email: ${_user?.email}, isLogin: ${isLogin()}")
+        if (Constants.DEBUG) Log.e(TAG, "user isNull: ${_user == null}, email: ${_user?.email}, isLogin: ${isLogin()}")
         updateLiveData()
     }
 

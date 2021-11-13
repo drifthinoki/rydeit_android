@@ -3,6 +3,7 @@ package com.rydeit.io.api
 import com.google.gson.JsonObject
 import com.rydeit.io.api.responses.Login
 import com.rydeit.io.api.responses.Login2fa
+import com.rydeit.io.api.responses.RegisterStep1
 import com.rydeit.io.config.Constants
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.*
@@ -42,5 +43,17 @@ interface ApiService {
         @Field("phoneToken") smsVerifyCode: String,
         @Field("token2fa") google2fa: String
     ): Observable<Login2fa>
+    // endregion
+
+    // region 註冊
+    /**
+     * 註冊第一階段，成功後返回 jwt token
+     */
+    @FormUrlEncoded
+    @POST(Constants.API_REGISTER_STEP_1)
+    fun registerStep1(
+        @Field("account") email: String,
+        @Field("phone") phone: String
+    ) :Observable<RegisterStep1>
     // endregion
 }

@@ -3,11 +3,9 @@ package com.rydeit.io.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.rydeit.io.R
-import com.rydeit.io.config.Constants.DEBUG
 import com.rydeit.io.databinding.ActivityPinBinding
 import com.rydeit.io.helper.PinInputType
 import com.rydeit.io.helper.PinHelper
@@ -132,7 +130,7 @@ class PinActivity : AppCompatActivity() {
     private fun reLogin() {
         UserHelper.logout()
         finish()
-        val intent = Intent(this, LoginAccountActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
 

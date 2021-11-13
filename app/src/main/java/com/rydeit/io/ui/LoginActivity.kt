@@ -4,69 +4,74 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
 import com.rydeit.io.LoginAccountItemType
-import com.rydeit.io.LoginAccountViewModel
+import com.rydeit.io.LoginViewModel
 import com.rydeit.io.R
-import com.rydeit.io.config.Constants.API_SUCCESS
 import com.rydeit.io.config.Constants.DEBUG
-import com.rydeit.io.databinding.ActivityLoginAccountBinding
+import com.rydeit.io.databinding.ActivityLoginBinding
 import com.rydeit.io.helper.DialogHelper
 import com.rydeit.io.helper.UserHelper
 
 
-class LoginAccountActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private val TAG = this::class.java.simpleName
-
-    lateinit var binding: ActivityLoginAccountBinding
-
-    lateinit var viewModel: LoginAccountViewModel
+    lateinit var binding: ActivityLoginBinding
+    lateinit var viewModel: LoginViewModel
+    private val editTextList: List<EditText> by lazy {
+        listOf(
+            binding.emailCustomTextInputLayout.binding.editText,
+            binding.passwordEdittext)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityLoginAccountBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         viewModel = ViewModelProvider.AndroidViewModelFactory(application).create(
-            LoginAccountViewModel::class.java)
+            LoginViewModel::class.java)
 
         initListener()
         registerLifeCycleObserver()
     }
 
     private fun initListener() {
+        // 返回鍵
         binding.loginTopBar.binding.backButton.setOnClickListener {
             finish()
             overridePendingTransition(R.anim.no_animation, R.anim.slide_out_left)
         }
 
-        val emailInputTextLayout = binding.emailCustomTextInputLayout.binding.textInputLayout
-
-        emailInputTextLayout.editText?.doAfterTextChanged {
-            val email = it.toString()
-            if (DEBUG) Log.e(TAG, "input text email: $email")
-            viewModel.updateLoginAccountItem(LoginAccountItemType.EMAIL, email)
+        // 偵測所有的輸入框都有輸入內容
+        // 將button狀態改為enable
+        editTextList.forEachIndexed { index, editText ->
+            editText.doAfterTextChanged {
+                val value = it.toString()
+                if (DEBUG) Log.e(TAG, "user input index: $index, value: $value" )
+                viewModel.updateInputValue(index, value)
+            }
         }
 
-        val passwordInputTextLayout = binding.passwordTextInputLayout
-
-        passwordInputTextLayout.editText?.doAfterTextChanged {
-            val password = it.toString()
-            if (DEBUG) Log.e(TAG, "input text password: $password")
-            viewModel.updateLoginAccountItem(LoginAccountItemType.PASSWORD, password)
-        }
-
+        // 繼續按鈕
         binding.nextButton.setOnClickListener {
-            viewModel.login(binding.checkboxRememberEmail.isChecked)
+            viewModel.login(editTextList[0].text.toString(), editTextList[1].text.toString(), binding.checkboxRememberEmail.isChecked)
+        }
+
+        // 註冊帳號按鈕
+        binding.registerButton.setOnClickListener {
+            val intent = Intent(this, RegisterStep1Activity::class.java)
+            startActivity(intent)
         }
 
     }
 
     private fun registerLifeCycleObserver() {
-        viewModel.isInputTextValid.observe(this) {
+        viewModel.isInputValid.observe(this) {
             binding.nextButton.isEnabled = it
         }
 
@@ -74,8 +79,7 @@ class LoginAccountActivity : AppCompatActivity() {
             isSuccess?.let {
                 if (!it) {
                     DialogHelper.showDialog(this, DialogHelper.DialogType.LOGIN_FAIL)
-                    binding.emailCustomTextInputLayout.binding.editText.text?.clear()
-                    binding.passwordTextInputEdittext.text?.clear()
+                    clearInputText()
                 } else {
                     val intent = Intent(this, Login2faActivity::class.java)
                     startActivity(intent)
@@ -91,6 +95,12 @@ class LoginAccountActivity : AppCompatActivity() {
                     binding.checkboxRememberEmail.isChecked = user.isRememberEmail
                 }
             }
+        }
+    }
+
+    private fun clearInputText() {
+        editTextList.forEach { editText ->
+            editText.text.clear()
         }
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginAccountActivity">
+    tools:context=".ui.LoginActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
@@ -46,6 +46,7 @@
             app:inputType="textEmailAddress"/>
 
         <CheckBox
+            style="@style/Widget.Rydeit.CheckBox"
             android:id="@+id/checkbox_remember_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,13 +54,7 @@
             android:checked="false"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:textSize="13sp"
-            android:letterSpacing="0.1"
-            android:minWidth="0dp"
             android:minHeight="0dp"
-            android:button="@null"
-            android:drawableLeft="@drawable/checkbox_forget_password"
-            android:drawablePadding="4dp"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -111,7 +106,7 @@
             app:passwordToggleDrawable="@drawable/textfield_show_password">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_text_input_edittext"
+                android:id="@+id/password_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="12dp"
@@ -151,7 +146,7 @@
             android:textAppearance="@style/TextAppearance.Rydeit.Body"/>
 
         <Button
-            android:id="@+id/register_account_button"
+            android:id="@+id/register_button"
             style="@style/Widget.Rydeit.Button.TextButton.Superlink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
