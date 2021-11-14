@@ -28,13 +28,13 @@ class Login2faViewModel:ViewModel() {
 
     fun loginVerifyEmail() {
         RetrofitServiceManager.apiService
-            .sendEmailVerifyCode()
+            .loginSendEmailVerifyCode()
             .subscribe ()
     }
 
     fun loginVerifyPhone() {
         RetrofitServiceManager.apiService
-            .sendSMSVerifyCode()
+            .loginSendSMSVerifyCode()
             .subscribe ()
     }
 

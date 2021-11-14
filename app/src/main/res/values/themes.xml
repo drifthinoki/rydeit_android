@@ -48,12 +48,14 @@
     </style>
 
     <!--輸入框樣式-->
-    <style name="Widget.Rydeit.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+    <style name="Widget.Rydeit.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/rydeit_text_input_layout_height</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="boxBackgroundColor">@color/blue_100</item>
         <item name="boxStrokeWidth">0dp</item>
-        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="boxStrokeErrorColor">@color/r_400</item>
+        <item name="boxStrokeColor">?attr/colorPrimary</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
     </style>
 

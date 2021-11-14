@@ -9,10 +9,15 @@ object Constants {
     //測試站
     const val DOMAIN = "https://api.test.rydeit.io"
     const val API_LOGIN = "/v3/account/login"
-    const val API_LOGIN_SEND_EMAIL_VERIFY_CODE = "/v3/account/login/email"
-    const val API_LOGIN_SEND_SMS_VERIFY_CODE = "/v3/account/login/sms"
+    const val API_LOGIN_VERIFY_EMAIL = "/v3/account/login/email"
+    const val API_LOGIN_VERIFY_PHONE = "/v3/account/login/sms"
     const val API_LOGIN_2FA = "/v3/account/login/2fa"
     const val API_REGISTER_STEP_1 = "/v3/registration/basic"
+    const val API_REGISTER_VERIFY_EMAIL = "/v3/registration/email"
+    const val API_REGISTER_VERIFY_PHONE = "/v3/registration/sms"
+    const val API_REGISTER_STEP_2 = "/v3/registration/verify"
+    const val API_REGISTER_STEP_3 = "/v3/registration/info"
+
 
 
     //PREF KEY

@@ -50,12 +50,12 @@ class Login2faActivity : AppCompatActivity() {
         }
 
         // 發送信箱驗證碼
-        binding.emailVerifyInputText.binding.editTextButton.setOnClickListener {
+        binding.emailVerifyInputText.onButtonClick = {
             viewModel.loginVerifyEmail()
         }
 
         // 發送簡訊驗證碼
-        binding.smsVerifyInputText.binding.editTextButton.setOnClickListener {
+        binding.smsVerifyInputText.onButtonClick = {
             viewModel.loginVerifyPhone()
         }
 

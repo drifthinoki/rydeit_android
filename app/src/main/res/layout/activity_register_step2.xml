@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Login2faActivity">
+    tools:context=".ui.RegisterStep2Activity">
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -21,12 +21,12 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95"/>
 
-    <com.rydeit.io.ui.customview.LoginTopBar
-        android:id="@+id/login_top_bar"
+    <com.rydeit.io.ui.customview.RegisterTopBar
+        android:id="@+id/register_top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:login_top_bar_title="@string/login_title"/>
+        app:phase="2"/>
 
 
     <LinearLayout
@@ -34,10 +34,11 @@
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="@id/guideline_v_5"
         app:layout_constraintRight_toRightOf="@id/guideline_v_95"
-        app:layout_constraintTop_toBottomOf="@id/login_top_bar"
+        app:layout_constraintTop_toBottomOf="@id/register_top_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="vertical"
         android:gravity="center_horizontal">
+
 
         <com.rydeit.io.ui.customview.CustomTextInputLayout
             android:id="@+id/email_verify_input_text"
@@ -51,7 +52,7 @@
             />
 
         <com.rydeit.io.ui.customview.CustomTextInputLayout
-            android:id="@+id/sms_verify_input_text"
+            android:id="@+id/phone_verify_input_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -60,31 +61,22 @@
             app:inputType="number"
             app:buttonText="@string/send_verify_code"/>
 
-        <com.rydeit.io.ui.customview.CustomTextInputLayout
-            android:id="@+id/google_2fa_input_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:title="@string/google_2fa"
-            app:hint="@string/google_2fa_hint"
-            app:inputType="number"/>
-
         <Button
             android:id="@+id/verify_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             style="@style/Widget.Rydeit.Button"
             android:enabled="false"
             android:text="@string/button_verify"/>
 
         <Button
-            android:id="@+id/reenter_email_password_button"
+            android:id="@+id/reenter_email_phone_button"
             style="@style/Widget.Rydeit.Button.TextButton.Superlink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="@string/reenter_email_password"/>
+            android:text="@string/reenter_email_phone"/>
 
     </LinearLayout>
 

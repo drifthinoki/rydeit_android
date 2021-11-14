@@ -101,15 +101,15 @@
             style="@style/Widget.Rydeit.TextInputLayout"
             app:layout_constraintTop_toBottomOf="@id/password_text_input_title"
             android:layout_marginTop="5dp"
-            android:hint=" "
             app:passwordToggleEnabled="true"
-            app:passwordToggleDrawable="@drawable/textfield_show_password">
+            app:passwordToggleDrawable="@drawable/textfield_show_password"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="12dp"
+                android:paddingVertical="12dp"
                 android:inputType="textPassword"
                 android:hint="@string/login_password_hint"
                 android:letterSpacing="0.1"

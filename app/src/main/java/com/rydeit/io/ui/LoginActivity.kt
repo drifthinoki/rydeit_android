@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.EditText
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
-import com.rydeit.io.LoginAccountItemType
 import com.rydeit.io.LoginViewModel
 import com.rydeit.io.R
 import com.rydeit.io.config.Constants.DEBUG
@@ -66,6 +65,7 @@ class LoginActivity : AppCompatActivity() {
         binding.registerButton.setOnClickListener {
             val intent = Intent(this, RegisterStep1Activity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.no_animation)
         }
 
     }
