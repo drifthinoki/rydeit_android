@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rydeit.io.api.RetrofitServiceManager
 import com.rydeit.io.config.Constants
+import com.rydeit.io.helper.UserHelper
+import com.rydeit.io.model.User
 
 class RegisterStep1ViewModel:ViewModel() {
 
@@ -26,6 +28,8 @@ class RegisterStep1ViewModel:ViewModel() {
         RetrofitServiceManager.apiService
             .registerStep1(email, phone)
             .subscribe({ registerStep1 ->
+                val user = User(email, registerStep1.data.token)
+                UserHelper.setUser(user)
                 isRegisterSuccess.postValue(registerStep1.isSuccess)
             }, {
                 Log.e(TAG, "register step1 api failed!")

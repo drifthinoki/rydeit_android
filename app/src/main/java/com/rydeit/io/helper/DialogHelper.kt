@@ -11,13 +11,14 @@ import com.rydeit.io.databinding.DialogCustomBinding
 object DialogHelper {
 
     enum class DialogType {
-        LOGIN_FAIL, VERIFY_FAIL;
+        LOGIN_FAIL, VERIFY_FAIL, REGISTER_SUCCESS;
 
         val title:Int
             get() {
                 return when(this) {
                     LOGIN_FAIL -> R.string.dialog_login_fail_title
                     VERIFY_FAIL -> R.string.dialog_verify_fail_title
+                    REGISTER_SUCCESS -> R.string.dialog_register_success_title
                 }
             }
 
@@ -25,6 +26,7 @@ object DialogHelper {
             get() {
                 return when(this) {
                     LOGIN_FAIL, VERIFY_FAIL -> R.drawable.ic_account_notice
+                    REGISTER_SUCCESS -> R.drawable.ic_account_basic
                 }
             }
 
@@ -33,6 +35,7 @@ object DialogHelper {
                 return when(this) {
                     LOGIN_FAIL -> R.string.dialog_login_fail_msg
                     VERIFY_FAIL -> R.string.dialog_verify_fail_msg
+                    REGISTER_SUCCESS -> R.string.dialog_register_success_msg
                 }
             }
 
@@ -40,19 +43,20 @@ object DialogHelper {
             get() {
                 return when(this) {
                     LOGIN_FAIL, VERIFY_FAIL -> R.string.btn_text_close
+                    REGISTER_SUCCESS -> R.string.btn_text_login
                 }
             }
 
         val secondBtnText:Int?
             get() {
                 return when(this) {
-                    LOGIN_FAIL, VERIFY_FAIL -> null
+                    LOGIN_FAIL, VERIFY_FAIL, REGISTER_SUCCESS -> null
                 }
             }
 
     }
 
-    fun showDialog(activity: Activity, dialogType: DialogType) {
+    fun showDialog(activity: Activity, dialogType: DialogType, mainButtonAction: (()->Unit)? = null) {
         val builder = AlertDialog.Builder(activity)
         val binding = DialogCustomBinding.inflate(activity.layoutInflater, null, false)
         builder.setView(binding.root)
@@ -66,6 +70,7 @@ object DialogHelper {
         binding.dialogMsg.text = activity.getText(dialogType.message)
         binding.dialogMainBtn.text = activity.getText(dialogType.mainBtnText)
         binding.dialogMainBtn.setOnClickListener {
+            mainButtonAction?.invoke()
             dialog.dismiss()
         }
 

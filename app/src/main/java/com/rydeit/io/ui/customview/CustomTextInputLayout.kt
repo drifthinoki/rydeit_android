@@ -3,14 +3,17 @@ package com.rydeit.io.ui.customview
 import android.content.Context
 import android.content.res.Resources
 import android.os.CountDownTimer
+import android.text.InputType
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.textfield.TextInputLayout
 import com.rydeit.io.R
+import com.rydeit.io.config.Constants
 import com.rydeit.io.databinding.ViewTextInputLayoutBinding
 
 class CustomTextInputLayout @JvmOverloads constructor(
@@ -31,6 +34,8 @@ class CustomTextInputLayout @JvmOverloads constructor(
     }
 
     var onButtonClick: (()->Unit)? = null
+
+    private var isInputValid: Boolean = true
 
     init {
         val inflater = LayoutInflater.from(context)
@@ -57,6 +62,7 @@ class CustomTextInputLayout @JvmOverloads constructor(
             "textPassword" -> 81
             "phone" -> 3
             "number" -> 2
+            "text" -> 1
             else -> throw Resources.NotFoundException()
         }
         binding.editText.inputType = inputTypeInt
@@ -78,10 +84,17 @@ class CustomTextInputLayout @JvmOverloads constructor(
         }
 
         if (inputTypeInt == 81) {
+            binding.editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
             binding.textInputLayout.endIconMode = TextInputLayout.END_ICON_PASSWORD_TOGGLE;
             binding.textInputLayout.endIconDrawable = ResourcesCompat.getDrawable(resources, R.drawable.textfield_show_password, null);
+            binding.textInputLayout.setEndIconTintList(resources.getColorStateList(R.color.password_toggle_color_selector, null))
+        }
 
-
+        binding.editText.doAfterTextChanged {
+            if (!isInputValid) {
+                isInputValid = !isInputValid
+                updateBoxStrokeColor(isInputValid)
+            }
         }
 
     }
@@ -93,15 +106,31 @@ class CustomTextInputLayout @JvmOverloads constructor(
         object : CountDownTimer(60000, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
-                Log.e(TAG, "onTick text: ${millisUntilFinished / 1000} 秒")
+//                Log.e(TAG, "onTick text: ${millisUntilFinished / 1000} 秒")
                 button.text = "${millisUntilFinished / 1000} 秒"
             }
 
             override fun onFinish() {
-                Log.e(TAG, "onFinish text: 重新發送")
+//                Log.e(TAG, "onFinish text: 重新發送")
                 button.isEnabled = true
                 button.text = "重新發送"
             }
         }.start()
+    }
+
+    fun updateBoxStrokeColor(isInputValid: Boolean) {
+        this.isInputValid = isInputValid
+        if (!isInputValid) {
+            //輸入內容錯誤 顯示紅邊框, 紅底色 UI
+            binding.textInputLayout.error = " "
+            binding.textInputLayout.errorIconDrawable = null
+            binding.textInputLayout.boxBackgroundColor = resources.getColor(R.color.r_100, null)
+            binding.textInputLayout.boxStrokeWidth = 2
+        }else {
+            binding.textInputLayout.error = ""
+            binding.textInputLayout.errorIconDrawable = null
+            binding.textInputLayout.boxBackgroundColor = resources.getColor(R.color.blue_100, null)
+            binding.textInputLayout.boxStrokeWidth = 0
+        }
     }
 }

@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Rydeit">
-        <activity android:name=".ui.RegisterStep2Activity"></activity>
+        <activity android:name=".ui.RegisterStep3Activity"></activity>
+        <activity android:name=".ui.RegisterStep2Activity" />
         <activity android:name=".ui.RegisterStep1Activity" />
         <activity android:name=".ui.PinActivity" />
         <activity android:name=".ui.Login2faActivity" />

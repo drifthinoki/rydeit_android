@@ -27,4 +27,5 @@ object Constants {
 
     // Rydeit setting
     const val PIN_ERROR_TIMES = 5
+    const val PASSWORD_REGEX = "^[a-zA-Z0-9~!@#$%^&*()_`\\-+={}:\";'<>?,./]+$"
 }

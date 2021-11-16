@@ -90,7 +90,9 @@ class RegisterStep2Activity : AppCompatActivity() {
         viewModel.isVerifySuccess.observe(this) { isSuccessOrNull ->
             isSuccessOrNull?.let {
                 if (it) {
-                    //TODO: 跳轉 register step 3
+                    val intent = Intent(this, RegisterStep3Activity::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.no_animation)
 
                 } else {
                     DialogHelper.showDialog(this, DialogHelper.DialogType.VERIFY_FAIL)

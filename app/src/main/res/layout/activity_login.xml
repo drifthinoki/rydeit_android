@@ -27,132 +27,111 @@
         app:layout_constraintTop_toTopOf="parent"
         app:login_top_bar_title="@string/login_title"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_email_text_input"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="@id/guideline_v_5"
         app:layout_constraintRight_toRightOf="@id/guideline_v_95"
         app:layout_constraintTop_toBottomOf="@id/login_top_bar"
-        android:layout_marginTop="30dp">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.rydeit.io.ui.customview.CustomTextInputLayout
-            android:id="@+id/email_custom_text_input_layout"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:title="@string/login_email"
-            app:hint="@string/login_email_hint"
-            app:inputType="textEmailAddress"/>
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-        <CheckBox
-            style="@style/Widget.Rydeit.CheckBox"
-            android:id="@+id/checkbox_remember_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/remember_email"
-            android:checked="false"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:minHeight="0dp"
-            />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.rydeit.io.ui.customview.CustomTextInputLayout
+                    android:id="@+id/email_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:title="@string/login_email"
+                    app:hint="@string/login_email_hint"
+                    app:inputType="textEmailAddress"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_password_text_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/guideline_v_5"
-        app:layout_constraintRight_toRightOf="@id/guideline_v_95"
-        app:layout_constraintTop_toBottomOf="@id/cl_email_text_input"
-        android:layout_marginTop="20dp">
+                <CheckBox
+                    style="@style/Widget.Rydeit.CheckBox"
+                    android:id="@+id/checkbox_remember_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remember_email"
+                    android:checked="false"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:minHeight="0dp"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/password_text_input_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_password"
-                android:textAppearance="@style/TextAppearance.Rydeit.TextInputLayout.Title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                style="@style/Widget.Rydeit.Button.TextButton.Superlink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/forget_password"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:textSize="12sp"
-                android:letterSpacing="0.1"
-                />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password_text_input_layout"
-            style="@style/Widget.Rydeit.TextInputLayout"
-            app:layout_constraintTop_toBottomOf="@id/password_text_input_title"
-            android:layout_marginTop="5dp"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleDrawable="@drawable/textfield_show_password"
-            app:hintEnabled="false">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password_edittext"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="12dp"
-                android:inputType="textPassword"
-                android:hint="@string/login_password_hint"
-                android:letterSpacing="0.1"
-                android:textSize="15sp"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginTop="@dimen/rydeit_text_input_spacing">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/next_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/cl_password_text_input"
-        app:layout_constraintLeft_toLeftOf="@id/guideline_v_5"
-        app:layout_constraintRight_toRightOf="@id/guideline_v_95"
-        android:layout_marginTop="40dp"
-        style="@style/Widget.Rydeit.Button"
-        android:enabled="false"
-        android:text="@string/button_next"/>
+                <com.rydeit.io.ui.customview.CustomTextInputLayout
+                    android:id="@+id/password_text_input_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:title="@string/login_password"
+                    app:hint="@string/login_password_hint"
+                    app:inputType="textPassword"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/next_button">
+                <Button
+                    style="@style/Widget.Rydeit.Button.TextButton.Superlink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forget_password"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.1"
+                    />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/first_time_use"
-            android:textAppearance="@style/TextAppearance.Rydeit.Body"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-            android:id="@+id/register_button"
-            style="@style/Widget.Rydeit.Button.TextButton.Superlink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register_account"
-            android:textSize="14sp"
-            />
-    </LinearLayout>
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/rydrit_action_button_spacing"
+                style="@style/Widget.Rydeit.Button"
+                android:enabled="false"
+                android:text="@string/button_next"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/next_button">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/first_time_use"
+                    android:textAppearance="@style/TextAppearance.Rydeit.Body"/>
+
+                <Button
+                    android:id="@+id/register_button"
+                    style="@style/Widget.Rydeit.Button.TextButton.Superlink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_account"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,5 +53,19 @@
     <string name="agree_privacy_term">我已閱讀且同意</string>
     <string name="privacy_term">隱私權政策與條款</string>
     <string name="reenter_email_phone">重新輸入信箱及手機</string>
+    <string name="nickname">暱稱</string>
+    <string name="nickname_hint">請輸入暱稱</string>
+    <string name="set_password">建立密碼</string>
+    <string name="set_password_hint">請輸入密碼</string>
+    <string name="password_more_than_8_digits">密碼達 8 個字元以上</string>
+    <string name="password_can_have_these_symbol">僅使用大小寫英文字母、數字或 ~!@#$%^&#038;;*()_+={}:";'&#060;&#062;?,./ 以上符號</string>
+    <string name="confirm_password">確認密碼</string>
+    <string name="confirm_password_hint">再次輸入密碼</string>
+    <string name="referral">推薦碼</string>
+    <string name="referral_hint">請填選推薦碼</string>
+    <string name="button_finish_register">完成註冊</string>
+    <string name="dialog_register_success_title">註冊完成</string>
+    <string name="dialog_register_success_msg">歡迎搭乘 Rydeit 發財車</string>
+    <string name="btn_text_login">登入</string>
 
 </resources>

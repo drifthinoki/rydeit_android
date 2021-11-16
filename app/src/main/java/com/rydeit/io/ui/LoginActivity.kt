@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
     lateinit var viewModel: LoginViewModel
     private val editTextList: List<EditText> by lazy {
         listOf(
-            binding.emailCustomTextInputLayout.binding.editText,
-            binding.passwordEdittext)
+            binding.emailTextInputLayout.binding.editText,
+            binding.passwordTextInputLayout.binding.editText)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +42,9 @@ class LoginActivity : AppCompatActivity() {
     private fun initListener() {
         // 返回鍵
         binding.loginTopBar.binding.backButton.setOnClickListener {
-            finish()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
             overridePendingTransition(R.anim.no_animation, R.anim.slide_out_left)
         }
 
@@ -91,7 +93,7 @@ class LoginActivity : AppCompatActivity() {
         UserHelper.user.observe(this) { user ->
             user?.let {
                 if (user.isRememberEmail) {
-                    binding.emailCustomTextInputLayout.binding.editText.setText(user.email)
+                    binding.emailTextInputLayout.binding.editText.setText(user.email)
                     binding.checkboxRememberEmail.isChecked = user.isRememberEmail
                 }
             }

@@ -28,64 +28,69 @@
         app:layout_constraintTop_toTopOf="parent"
         app:login_top_bar_title="@string/login_title"/>
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="@id/guideline_v_5"
         app:layout_constraintRight_toRightOf="@id/guideline_v_95"
         app:layout_constraintTop_toBottomOf="@id/login_top_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
-
-        <com.rydeit.io.ui.customview.CustomTextInputLayout
-            android:id="@+id/email_verify_input_text"
+        app:layout_constraintBottom_toBottomOf="parent">
+        
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            app:title="@string/verify_email"
-            app:hint="@string/verify_email_hint"
-            app:inputType="number"
-            app:buttonText="@string/send_verify_code"
-            />
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-        <com.rydeit.io.ui.customview.CustomTextInputLayout
-            android:id="@+id/sms_verify_input_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:title="@string/verify_phone"
-            app:hint="@string/verify_phone_hint"
-            app:inputType="number"
-            app:buttonText="@string/send_verify_code"/>
+            <com.rydeit.io.ui.customview.CustomTextInputLayout
+                android:id="@+id/email_verify_input_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="@string/verify_email"
+                app:hint="@string/verify_email_hint"
+                app:inputType="number"
+                app:buttonText="@string/send_verify_code"
+                />
 
-        <com.rydeit.io.ui.customview.CustomTextInputLayout
-            android:id="@+id/google_2fa_input_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:title="@string/google_2fa"
-            app:hint="@string/google_2fa_hint"
-            app:inputType="number"/>
+            <com.rydeit.io.ui.customview.CustomTextInputLayout
+                android:id="@+id/sms_verify_input_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/rydeit_text_input_spacing"
+                app:title="@string/verify_phone"
+                app:hint="@string/verify_phone_hint"
+                app:inputType="number"
+                app:buttonText="@string/send_verify_code"/>
 
-        <Button
-            android:id="@+id/verify_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            style="@style/Widget.Rydeit.Button"
-            android:enabled="false"
-            android:text="@string/button_verify"/>
+            <com.rydeit.io.ui.customview.CustomTextInputLayout
+                android:id="@+id/google_2fa_input_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/rydeit_text_input_spacing"
+                app:title="@string/google_2fa"
+                app:hint="@string/google_2fa_hint"
+                app:inputType="number"/>
 
-        <Button
-            android:id="@+id/reenter_email_password_button"
-            style="@style/Widget.Rydeit.Button.TextButton.Superlink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/reenter_email_password"/>
+            <Button
+                android:id="@+id/verify_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/rydrit_action_button_spacing"
+                style="@style/Widget.Rydeit.Button"
+                android:enabled="false"
+                android:text="@string/button_verify"/>
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/reenter_email_password_button"
+                style="@style/Widget.Rydeit.Button.TextButton.Superlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/reenter_email_password"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

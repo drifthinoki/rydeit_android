@@ -1,6 +1,6 @@
 package com.rydeit.io.model
 
-class User(val email:String, var tmpToken:String, val isRememberEmail: Boolean) {
+class User(val email:String, var tmpToken:String, val isRememberEmail: Boolean = false) {
 
     private var token: String? = null
 

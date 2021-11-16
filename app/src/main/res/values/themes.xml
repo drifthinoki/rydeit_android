@@ -57,6 +57,7 @@
         <item name="boxStrokeErrorColor">@color/r_400</item>
         <item name="boxStrokeColor">?attr/colorPrimary</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="android:textSize">0sp</item>
     </style>
 
     <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">

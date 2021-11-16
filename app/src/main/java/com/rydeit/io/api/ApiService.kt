@@ -1,10 +1,7 @@
 package com.rydeit.io.api
 
 import com.google.gson.JsonObject
-import com.rydeit.io.api.responses.Login
-import com.rydeit.io.api.responses.Login2fa
-import com.rydeit.io.api.responses.RegisterStep1
-import com.rydeit.io.api.responses.RegisterStep2
+import com.rydeit.io.api.responses.*
 import com.rydeit.io.config.Constants
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.*
@@ -87,8 +84,8 @@ interface ApiService {
     fun registerStep3(
         @Field("name") nickname: String,
         @Field("password") password: String,
-        @Field("referral") referral: String
-    ): Observable<JsonObject>
+        @Query("referral") referral: String? = null
+    ): Observable<RegisterStep3>
 
     // endregion
 }
