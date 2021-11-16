@@ -40,7 +40,35 @@ interface ApiService {
         @Field("emailToken") emailVerifyCode: String,
         @Field("phoneToken") smsVerifyCode: String,
         @Field("token2fa") google2fa: String
-    ): Observable<Login2fa>
+    ): Observable<TokenResponse>
+    // endregion
+
+    // region 忘記密碼
+    /**
+     * 未登入, 發送信箱驗證碼
+     */
+    @GET(Constants.API_RESET_SEND_VERIFY_EMAIL)
+    fun resetSendEmailVerifyCode(@Path("account") email: String
+    ): Observable<JsonObject>
+
+    /**
+     * 忘記密碼第一階段, 檢查信箱驗證碼是否正確
+     */
+    @FormUrlEncoded
+    @POST(Constants.API_RESET_VERIFY_EMAIL)
+    fun resetVerifyEmailCode(
+        @Field("account") email: String,
+        @Field("emailToken") emailVerifyCode: String
+    ): Observable<TokenResponse>
+
+    /**
+     * 忘記密碼第二階段, 重設密碼
+     */
+    @FormUrlEncoded
+    @POST(Constants.API_RESET_PASSWORD)
+    fun resetPassword(
+        @Field("password") password: String
+    ): Observable<StatusCodeResponse>
     // endregion
 
     // region 註冊
@@ -52,7 +80,7 @@ interface ApiService {
     fun registerStep1(
         @Field("account") email: String,
         @Field("phone") phone: String
-    ) :Observable<RegisterStep1>
+    ) :Observable<TokenResponse>
 
     /**
      * 註冊第二階段，發出驗證email
@@ -85,7 +113,7 @@ interface ApiService {
         @Field("name") nickname: String,
         @Field("password") password: String,
         @Query("referral") referral: String? = null
-    ): Observable<RegisterStep3>
+    ): Observable<StatusCodeResponse>
 
     // endregion
 }

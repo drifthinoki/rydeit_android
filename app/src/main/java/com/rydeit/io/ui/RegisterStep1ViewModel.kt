@@ -39,7 +39,7 @@ class RegisterStep1ViewModel:ViewModel() {
 
 }
 
-class InputCheckItem(numberOfValues:Int) {
+data class InputCheckItem(val numberOfValues:Int) {
 
     private val TAG = this::class.java.simpleName
 

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 
 @Keep
-data class Login2fa(
+data class TokenResponse(
     @SerializedName("data") var data:DataLogin2fa,
     @SerializedName("status") var status:StatusLogin2fa
 ){

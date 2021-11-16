@@ -58,6 +58,13 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        //忘記密碼 按鈕
+        binding.forgetPasswordButton.setOnClickListener {
+            val intent = Intent(this, ForgetPasswordActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.no_animation)
+        }
+
         // 繼續按鈕
         binding.nextButton.setOnClickListener {
             viewModel.login(editTextList[0].text.toString(), editTextList[1].text.toString(), binding.checkboxRememberEmail.isChecked)

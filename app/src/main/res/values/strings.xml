@@ -35,6 +35,8 @@
     <string name="reenter_email_password">重新輸入信箱及密碼</string>
     <string name="dialog_verify_fail_title">驗證失敗</string>
     <string name="dialog_verify_fail_msg">請重新發送驗證碼進行驗證 或重新輸入信箱及手機</string>
+
+    <!--Pin 碼-->
     <string name="pin_title_set_pin">設定 Pin 碼 🔒</string>
     <string name="set_pin_subtitle">請設定您的 Pin 碼</string>
     <string name="reset_pin">重新設定</string>
@@ -44,6 +46,8 @@
     <string name="pin_subtitle_enter_your_pin">請輸入您的 Pin 碼</string>
     <string name="forget_pin">忘記 Pin 碼？</string>
     <string name="re_login">請重新登入</string>
+
+    <!--註冊-->
     <string name="register_title">註冊 Rydeit 發財車 👋</string>
     <string name="register_phone">手機號碼</string>
     <string name="register_phone_hint">+886123456789</string>
@@ -67,5 +71,12 @@
     <string name="dialog_register_success_title">註冊完成</string>
     <string name="dialog_register_success_msg">歡迎搭乘 Rydeit 發財車</string>
     <string name="btn_text_login">登入</string>
+
+    <!--忘記密碼-->
+    <string name="forget_password_title">Rydeit 發財車－忘記密碼 🚜</string>
+    <string name="back_to_login_view">返回登入畫面</string>
+    <string name="button_finish_reset_password">完成密碼重設</string>
+    <string name="dialog_reset_password_title">重設密碼成功</string>
+    <string name="dialog_reset_password_msg">您已成功設定新密碼</string>
 
 </resources>
