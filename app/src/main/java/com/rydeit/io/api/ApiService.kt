@@ -23,13 +23,13 @@ interface ApiService {
      * 登入第二階段，發送信箱驗證碼
      */
     @GET(Constants.API_LOGIN_VERIFY_EMAIL)
-    fun loginSendEmailVerifyCode(): Observable<JsonObject>
+    fun loginSendEmailVerifyCode(): Observable<VerifyCodeResponse>
 
     /**
      * 登入第二階段，發送簡訊驗證碼
      */
     @GET(Constants.API_LOGIN_VERIFY_PHONE)
-    fun loginSendSMSVerifyCode(): Observable<JsonObject>
+    fun loginSendSMSVerifyCode(): Observable<VerifyCodeResponse>
 
     /**
      * 登入第二階段，檢查 google auth / 簡訊驗證碼 / email驗證碼

@@ -7,4 +7,16 @@
     <dimen name="rydrit_action_button_spacing">20dp</dimen>
     <dimen name="rydeit_second_action_button_spacing">10dp</dimen>
     <dimen name="rydeit_button_min_height">46dp</dimen>
+
+    <!--忘記密碼-->
+    <dimen name="rydrit_forget_password_top_bar_spacing">30dp</dimen>
+
+    <!--Pin 碼-->
+    <dimen name="rydrit_pin_top_bar_spacing">10dp</dimen>
+    <dimen name="rydeit_pin_action_button_spacing">20dp</dimen>
+
+
+
+    <!--首頁-->
+    <dimen name="rydeit_home_top_bar_height">80dp</dimen>
 </resources>

@@ -2,10 +2,13 @@ package com.rydeit.io.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.rydeit.io.MainViewModel
 import com.rydeit.io.R
 import com.rydeit.io.databinding.ActivityMainBinding
 import com.rydeit.io.helper.UserHelper
@@ -14,12 +17,15 @@ import com.rydeit.io.helper.UserHelper
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         val navView: BottomNavigationView = binding.navView
 
@@ -42,12 +48,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun registerLifeCycleObserver() {
-        UserHelper.isLogin.observe(this) {
-            updateNavState(it)
+        viewModel.isLogin.observe(this) {
+            updateUI(it)
         }
     }
 
-    private fun updateNavState(isLogin:Boolean) {
+    private fun updateUI(isLogin:Boolean) {
+        // update main top bar state
+        binding.loginButton.visibility = if (isLogin) View.GONE else View.VISIBLE
+        binding.clUser.visibility =  if (isLogin) View.VISIBLE else View.GONE
+        viewModel.getUser()?.let { user ->
+            binding.imageProfile.text = user.firstAlphabetOfEmail.toString()
+            binding.tvEmail.text = user.email
+            binding.tvLevel.text = user.formattedLevel
+        }
+
+
+        // update bottom nav view state
         val navView: BottomNavigationView = binding.navView
         navView.menu.findItem(R.id.navigation_purchase).isEnabled = isLogin
         navView.menu.findItem(R.id.navigation_asset).isEnabled = isLogin

@@ -30,6 +30,10 @@ object UserHelper {
         savePreference()
     }
 
+    fun getUser():User? {
+        return _user
+    }
+
     /**
      * 用戶需要完成 3 步驟, 才是真的登入
      * 1.信箱, 密碼登入

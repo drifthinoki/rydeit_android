@@ -29,13 +29,17 @@ class Login2faViewModel:ViewModel() {
     fun loginVerifyEmail() {
         RetrofitServiceManager.apiService
             .loginSendEmailVerifyCode()
-            .subscribe ()
+            .subscribe { response ->
+                if (Constants.DEBUG) Log.e(TAG, response.verifyCode)
+            }
     }
 
     fun loginVerifyPhone() {
         RetrofitServiceManager.apiService
             .loginSendSMSVerifyCode()
-            .subscribe ()
+            .subscribe { response ->
+                if (Constants.DEBUG) Log.e(TAG, response.verifyCode)
+            }
     }
 
     fun login2FA(emailVerifyCode: String, smsVerifyCode: String, google2fa: String) {

@@ -79,9 +79,4 @@
         android:layout_marginTop="30dp"
         android:textAppearance="@style/TextAppearance.Rydeit.Title"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/rydrit_login_top_bar_spacing"
-        app:layout_constraintTop_toBottomOf="@id/title"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

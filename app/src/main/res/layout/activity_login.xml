@@ -36,6 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
+            android:layout_marginTop="@dimen/rydrit_login_top_bar_spacing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"

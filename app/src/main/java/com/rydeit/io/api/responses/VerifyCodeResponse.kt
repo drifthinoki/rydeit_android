@@ -3,10 +3,9 @@ package com.rydeit.io.api.responses
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
-
 @Keep
-data class TokenResponse(
-    @SerializedName("data") var data:DataLogin2fa,
+data class VerifyCodeResponse(
+    @SerializedName("data") var verifyCode: String,
     @SerializedName("status") var status:StatusVerifyCode
 ){
     val isSuccess: Boolean
@@ -14,12 +13,7 @@ data class TokenResponse(
 }
 
 @Keep
-data class DataLogin2fa (
-    @SerializedName("token") var token:String
-)
-
-@Keep
-data class StatusLogin2fa (
+data class StatusVerifyCode (
     @SerializedName("code") var code:String,
     @SerializedName("message") var message:String,
     @SerializedName("datetime") var datetime:String

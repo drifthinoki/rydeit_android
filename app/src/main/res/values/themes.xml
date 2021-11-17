@@ -32,6 +32,12 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <!--頁面內文(藍黑字)-->
+    <style name="TextAppearance.Rydeit.Body2" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/gb_500</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
     <!--Dialog頁面內文(灰字)-->
     <style name="TextAppearance.Rydeit.Dialog.Body" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textColor">@color/gb_500</item>
