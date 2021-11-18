@@ -29,4 +29,9 @@
     <dimen name="rydeit_plan_card_padding">15dp</dimen>
     <dimen name="rydeit_plan_card_button_min_height">44dp</dimen>
 
+    <!--Step Button-->
+    <dimen name="rydeit_step_button_padding">30dp</dimen>
+    <dimen name="rydeit_step_button_min_height">48dp</dimen>
+
+
 </resources>

@@ -91,5 +91,8 @@
     <string name="rate_of_return">年化報酬</string>
     <string name="performance">績效</string>
     <string name="plan_card_button_text_processing">方案進行中</string>
+    <string name="finish_register">完成登記</string>
+    <string name="last_step_button">上一步</string>
+    <string name="next_step_button">下一步</string>
 
 </resources>

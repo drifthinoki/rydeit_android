@@ -91,7 +91,7 @@
         <item name="cornerSize">4dp</item>
     </style>
     
-    <!--按鈕樣式-->
+    <!--主題色 contained button-->
     <style name="Widget.Rydeit.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textStyle">bold</item>
@@ -106,6 +106,19 @@
         </item>
         <item name="android:backgroundTint">@color/rydeit_btn_bg_color_selector</item>
         <item name="minHeight">@dimen/rydeit_button_min_height</item>
+    </style>
+
+    <!--主題色 outlined button-->
+    <style name="Widget.Rydeit.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/superlink_text_color_selector</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="cornerRadius">5dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="minHeight">@dimen/rydeit_step_button_min_height</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/blue_300</item>
     </style>
 
     <!--Plan Card按鈕樣式-->
