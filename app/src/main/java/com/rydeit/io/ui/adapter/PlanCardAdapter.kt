@@ -1,6 +1,7 @@
 package com.rydeit.io.ui.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rydeit.io.R
 import com.rydeit.io.api.responses.Plan
 import com.rydeit.io.databinding.ViewPlanCardBinding
+import java.text.NumberFormat
 
 enum class PlanCurrencyType {
     USDT, USDC, ETH
@@ -24,8 +26,9 @@ class PlanCardAdapter(private val context: Context,
                 binding.planTitle.text = plan.name
                 binding.planDescription.text = plan.description
                 binding.planIntroButton.setOnClickListener {
-                    //TODO: webview
-
+                    val intent = Intent(context, WebViewActivity::class.java)
+                    intent.putExtra(KEY_WEB_URL, plan.webUrl)
+                    context.startActivity(intent)
                 }
 
                 plan.planCurrencyTypeList.forEach {
@@ -37,7 +40,11 @@ class PlanCardAdapter(private val context: Context,
                 }
                 binding.clProgressBar.visibility = if (plan.needProgress) View.VISIBLE else View.GONE
                 binding.progressBar.max = plan.progressMax
-                binding.progressBar.progress = plan.progress
+                binding.progressBar.progress = plan.progressForProgressBar
+                binding.progressString.text = plan.progressString
+                binding.progressPercent.text = plan.formatProgressPercent
+
+
 
                 when(plan.stage) {
                     1 -> binding.tagPurchase.root.visibility = View.VISIBLE
@@ -61,6 +68,11 @@ class PlanCardAdapter(private val context: Context,
             }
         }
 
+
+    companion object {
+        val KEY_WEB_URL = "web_url"
+
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanCardViewHolder {
         val inflater = LayoutInflater.from(context)
