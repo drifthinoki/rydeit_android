@@ -78,5 +78,18 @@
     <string name="button_finish_reset_password">完成密碼重設</string>
     <string name="dialog_reset_password_title">重設密碼成功</string>
     <string name="dialog_reset_password_msg">您已成功設定新密碼</string>
+    <string name="stablecoin_revenue_title">穩定幣收益</string>
+    <string name="stablecoin_revenue_description">你在 Rydeit 發財車近 24 小時穩定幣報酬</string>
+    <string name="stablecoin_totol_asset_title">穩定幣總資產</string>
+    <string name="stablecoin_totol_asset_description">可用餘額及申購淨值加總</string>
+    <string name="invisible">$*******</string>
+    <string name="recommend_product_title">精選方案</string>
+    <string name="fund_intro">方案介紹</string>
+    <string name="plan_card_purchasing">開放申購</string>
+    <string name="plan_card_processing">進行中</string>
+    <string name="plan_card_coming_soon">即將開放</string>
+    <string name="rate_of_return">年化報酬</string>
+    <string name="performance">績效</string>
+    <string name="plan_card_button_text_processing">方案進行中</string>
 
 </resources>

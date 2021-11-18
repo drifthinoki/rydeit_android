@@ -26,6 +26,20 @@
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
+    <!--頁面區塊標題(灰字)-->
+    <style name="TextAppearance.Rydeit.Title2" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gb_400</item>
+    </style>
+
+    <!--頁面強調文字(藍字)-->
+    <style name="TextAppearance.Rydeit.Large" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/colorPrimary</item>
+    </style>
+
     <!--頁面內文(黑字)-->
     <style name="TextAppearance.Rydeit.Body" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
@@ -36,6 +50,12 @@
     <style name="TextAppearance.Rydeit.Body2" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textColor">@color/gb_500</item>
         <item name="android:textSize">14sp</item>
+    </style>
+
+    <!--頁面註解(藍黑字)-->
+    <style name="TextAppearance.Rydeit.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/neutrals_300</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <!--Dialog頁面內文(灰字)-->
@@ -60,7 +80,7 @@
         <item name="boxBackgroundColor">@color/blue_100</item>
         <item name="boxStrokeWidth">0dp</item>
         <item name="boxStrokeWidthFocused">1dp</item>
-        <item name="boxStrokeErrorColor">@color/r_400</item>
+        <item name="boxStrokeErrorColor">@color/red_400</item>
         <item name="boxStrokeColor">?attr/colorPrimary</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
         <item name="android:textSize">0sp</item>
@@ -86,6 +106,20 @@
         </item>
         <item name="android:backgroundTint">@color/rydeit_btn_bg_color_selector</item>
         <item name="minHeight">@dimen/rydeit_button_min_height</item>
+    </style>
+
+    <!--Plan Card按鈕樣式-->
+    <style name="Widget.Rydeit.PlanCardButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/plan_button_text_color_selector</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="cornerRadius">5dp</item>
+        <item name="android:outlineAmbientShadowColor" tools:targetApi="p">?attr/colorPrimary</item>
+        <item name="android:outlineSpotShadowColor"  tools:targetApi="p">?attr/colorPrimary</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">
+            @animator/shr_next_button_state_list_anim
+        </item>
+        <item name="android:backgroundTint">@color/rydeit_plan_card_btn_bg_color_selector</item>
     </style>
 
     <style name="Widget.Rydeit.Button.TextButton.Superlink" parent="Widget.MaterialComponents.Button.TextButton">

@@ -20,6 +20,7 @@ object Constants {
     const val API_REGISTER_VERIFY_PHONE = "/v3/registration/sms"
     const val API_REGISTER_STEP_2 = "/v3/registration/verify"
     const val API_REGISTER_STEP_3 = "/v3/registration/info"
+    const val API_PLAN_LIST = "/v2/ticket/apy_list"
 
 
 

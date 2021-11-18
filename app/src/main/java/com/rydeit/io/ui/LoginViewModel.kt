@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.rydeit.io.api.RetrofitServiceManager
-import com.rydeit.io.api.responses.Login
+import com.rydeit.io.api.responses.LoginResponse
 import com.rydeit.io.config.Constants.API_SUCCESS
 import com.rydeit.io.config.Constants.DEBUG
 import com.rydeit.io.helper.UserHelper
@@ -35,7 +35,7 @@ class LoginViewModel(application: Application):AndroidViewModel(application) {
                 email,
                 password)
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe ({ loginResponse: Login? ->
+            .subscribe ({ loginResponse: LoginResponse? ->
                 loginResponse?.let { login ->
                     // 記住信箱
                     val user = User(email, login.data.token, rememberEmail)

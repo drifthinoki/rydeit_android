@@ -5,7 +5,6 @@ import android.content.res.Resources
 import android.os.CountDownTimer
 import android.text.InputType
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
@@ -13,7 +12,6 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.doAfterTextChanged
 import com.google.android.material.textfield.TextInputLayout
 import com.rydeit.io.R
-import com.rydeit.io.config.Constants
 import com.rydeit.io.databinding.ViewTextInputLayoutBinding
 
 class CustomTextInputLayout @JvmOverloads constructor(
@@ -124,7 +122,7 @@ class CustomTextInputLayout @JvmOverloads constructor(
             //輸入內容錯誤 顯示紅邊框, 紅底色 UI
             binding.textInputLayout.error = " "
             binding.textInputLayout.errorIconDrawable = null
-            binding.textInputLayout.boxBackgroundColor = resources.getColor(R.color.r_100, null)
+            binding.textInputLayout.boxBackgroundColor = resources.getColor(R.color.red_100, null)
             binding.textInputLayout.boxStrokeWidth = 2
         }else {
             binding.textInputLayout.error = ""

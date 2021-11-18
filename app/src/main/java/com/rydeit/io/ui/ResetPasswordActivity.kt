@@ -107,7 +107,7 @@ class ResetPasswordActivity : AppCompatActivity() {
         isLengthOK?.let {
             if (it) {
                 binding.passwordCheckForLength.imageCheck.setImageResource(R.drawable.ic_password_check_toggle)
-                binding.passwordCheckForLength.helperText.setTextColor(resources.getColor(R.color.g_400, null))
+                binding.passwordCheckForLength.helperText.setTextColor(resources.getColor(R.color.green_400, null))
             } else {
                 binding.passwordCheckForLength.imageCheck.setImageResource(R.drawable.ic_password_check_default)
                 binding.passwordCheckForLength.helperText.setTextColor(resources.getColor(R.color.gb_400, null))
@@ -117,7 +117,7 @@ class ResetPasswordActivity : AppCompatActivity() {
         isSymbolOK?.let {
             if (it) {
                 binding.passwordCheckForSymbol.imageCheck.setImageResource(R.drawable.ic_password_check_toggle)
-                binding.passwordCheckForSymbol.helperText.setTextColor(resources.getColor(R.color.g_400, null))
+                binding.passwordCheckForSymbol.helperText.setTextColor(resources.getColor(R.color.green_400, null))
             } else {
                 binding.passwordCheckForSymbol.imageCheck.setImageResource(R.drawable.ic_password_check_default)
                 binding.passwordCheckForSymbol.helperText.setTextColor(resources.getColor(R.color.gb_400, null))

@@ -17,7 +17,7 @@ interface ApiService {
     fun login(
         @Field("account") account: String,
         @Field("password") password: String
-    ): Observable<Login>
+    ): Observable<LoginResponse>
 
     /**
      * 登入第二階段，發送信箱驗證碼
@@ -49,7 +49,7 @@ interface ApiService {
      */
     @GET(Constants.API_RESET_SEND_VERIFY_EMAIL)
     fun resetSendEmailVerifyCode(@Path("account") email: String
-    ): Observable<JsonObject>
+    ): Observable<VerifyCodeResponse>
 
     /**
      * 忘記密碼第一階段, 檢查信箱驗證碼是否正確
@@ -115,5 +115,13 @@ interface ApiService {
         @Query("referral") referral: String? = null
     ): Observable<StatusCodeResponse>
 
+    // endregion
+
+    // region 計畫
+    /**
+     * 取得所有計畫
+     */
+    @GET(Constants.API_PLAN_LIST)
+    fun getPlanList() :Observable<PlanResponse>
     // endregion
 }

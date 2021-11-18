@@ -74,7 +74,7 @@ object UserHelper {
 
 
     private fun updateLiveData() {
-        this.user.value = _user
-        this.isLogin.value = isLogin()
+        this.user.postValue(_user)
+        this.isLogin.postValue(isLogin())
     }
 }

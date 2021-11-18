@@ -5,15 +5,8 @@ import com.google.gson.annotations.SerializedName
 
 @Keep
 data class StatusCodeResponse(
-    @SerializedName("status") var status:RegisterStep3Status
+    @SerializedName("status") var status:Status
 ){
     val isSuccess: Boolean
         get() = status.code == "0"
 }
-
-@Keep
-data class RegisterStep3Status (
-    @SerializedName("code") var code:String,
-    @SerializedName("message") var message:String,
-    @SerializedName("datetime") var datetime:String
-)

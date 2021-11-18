@@ -19,4 +19,14 @@
 
     <!--首頁-->
     <dimen name="rydeit_home_top_bar_height">80dp</dimen>
+    <dimen name="stable_coin_card_corner_radius">10dp</dimen>
+    <dimen name="plan_card_corner_radius">6dp</dimen>
+
+    <!--Stable Coin Card-->
+    <dimen name="rydeit_stable_coin_card_padding">15dp</dimen>
+
+    <!--Plan Card-->
+    <dimen name="rydeit_plan_card_padding">15dp</dimen>
+    <dimen name="rydeit_plan_card_button_min_height">44dp</dimen>
+
 </resources>

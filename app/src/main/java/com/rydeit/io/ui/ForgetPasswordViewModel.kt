@@ -24,7 +24,9 @@ class ForgetPasswordViewModel:ViewModel() {
     fun verifyEmail(email: String) {
         RetrofitServiceManager.apiService
             .resetSendEmailVerifyCode(email)
-            .subscribe()
+            .subscribe{ response ->
+                if (Constants.DEBUG) Log.e(TAG, response.verifyCode)
+            }
     }
 
     fun verifyEmailCode(email: String, code: String) {
