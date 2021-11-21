@@ -2,7 +2,7 @@ package com.rydeit.io.api.responses
 
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
-import com.rydeit.io.ui.adapter.PlanCurrencyType
+import com.rydeit.io.ui.adapter.CurrencyType
 import java.text.NumberFormat
 
 @Keep
@@ -42,10 +42,10 @@ data class Plan(
     val webUrl: String
         get() = baseUrl + path
 
-    val planCurrencyTypeList: List<PlanCurrencyType>
+    val currencyTypeList: List<CurrencyType>
         get() {
             return currency.map {
-                val type = PlanCurrencyType.valueOf(it)
+                val type = CurrencyType.valueOf(it)
                 return@map type
             }
         }

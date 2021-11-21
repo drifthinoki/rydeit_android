@@ -61,6 +61,7 @@ class CustomTextInputLayout @JvmOverloads constructor(
             "phone" -> 3
             "number" -> 2
             "text" -> 1
+            "none" -> 0
             else -> throw Resources.NotFoundException()
         }
         binding.editText.inputType = inputTypeInt

@@ -78,6 +78,8 @@
     <string name="button_finish_reset_password">完成密碼重設</string>
     <string name="dialog_reset_password_title">重設密碼成功</string>
     <string name="dialog_reset_password_msg">您已成功設定新密碼</string>
+
+    <!--首頁-->
     <string name="stablecoin_revenue_title">穩定幣收益</string>
     <string name="stablecoin_revenue_description">你在 Rydeit 發財車近 24 小時穩定幣報酬</string>
     <string name="stablecoin_totol_asset_title">穩定幣總資產</string>
@@ -92,7 +94,22 @@
     <string name="performance">績效</string>
     <string name="plan_card_button_text_processing">方案進行中</string>
     <string name="finish_register">完成登記</string>
+
+    <!--申購-->
     <string name="last_step_button">上一步</string>
     <string name="next_step_button">下一步</string>
+    <string name="purchase_plan">申購標的</string>
+    <string name="purchase_plan_hint">選擇申購標的</string>
+    <string name="purchase_currency">申購幣種</string>
+    <string name="purchase_currency_hint">選擇幣種</string>
+    <string name="add_value">前往充值</string>
+    <string name="wallet_balance_default">錢包餘額：尚未選擇幣種</string>
+    <string name="purchase_amount">申購金額</string>
+    <string name="purchase_amount_hint">每次至少申購 100 USD</string>
+    <string name="purchase_form_title_step1">第一步－方案設定</string>
+    <string name="purchase_form_description_step1">請確認「申購金額與方案起始日」</string>
+    <string name="bottom_sheet_title_choose_plan">選擇方案</string>
+    <string name="bottom_sheet_title_choose_currency">選擇幣種</string>
+    <string name="bottom_sheet_title_capital_detail">資金明細</string>
 
 </resources>

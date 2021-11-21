@@ -46,7 +46,7 @@ class RegisterStep3Activity : AppCompatActivity() {
 
     private fun initListener() {
         // Top Bar 返回鍵
-        binding.registerTopBar.binding.backButton.setOnClickListener {
+        binding.registerTopBar.binding.navTopBar.backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)

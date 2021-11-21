@@ -22,4 +22,10 @@
     <declare-styleable name="StepButton">
         <attr name="step" format="integer"/>
     </declare-styleable>
+
+    <declare-styleable name="CustomTextInputLayoutPresentBottomSheet">
+        <attr name="text_field_title" format="string"/>
+        <attr name="text_field_hint" format="string"/>
+    </declare-styleable>
+
 </resources>

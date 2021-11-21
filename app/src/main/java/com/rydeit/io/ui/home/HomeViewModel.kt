@@ -20,11 +20,12 @@ class HomeViewModel:ViewModel() {
         getPlanList()
     }
 
-    fun getPlanList() {
+    private fun getPlanList() {
         RetrofitServiceManager.apiService.getPlanList()
             .subscribe { response ->
-                if (Constants.DEBUG) Log.e(TAG, response.toString())
+//                if (Constants.DEBUG) Log.e(TAG, response.toString())
                 _planList.postValue(response.data)
+
             }
     }
 }

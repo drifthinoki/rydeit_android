@@ -162,7 +162,7 @@
 
             <TextView
                 android:id="@+id/progress_string"
-                style="@style/TextAppearance.Rydeit.Caption"
+                style="@style/TextAppearance.Rydeit.CaptionGrey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0.0000 / 200,000.0000 USDT"
@@ -172,7 +172,7 @@
 
             <TextView
                 android:id="@+id/progress_percent"
-                style="@style/TextAppearance.Rydeit.Caption"
+                style="@style/TextAppearance.Rydeit.CaptionGrey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0%"

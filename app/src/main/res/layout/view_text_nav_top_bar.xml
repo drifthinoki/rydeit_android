@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/actionBarNormal"
+    android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_v_2"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.02"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_v_98"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.98"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_top_bar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/actionBarNormal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_v_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_v_98">
+
+        <ImageButton
+            android:id="@+id/close_button"
+            android:layout_width="30dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_close"
+            android:scaleType="fitCenter"
+            android:background="?selectableItemBackground"/>
+
+        <TextView
+            style="@style/TextAppearance.Rydeit.BottomSheetTitle"
+            android:id="@+id/title"
+            android:text="頁面標題"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/gb_200"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

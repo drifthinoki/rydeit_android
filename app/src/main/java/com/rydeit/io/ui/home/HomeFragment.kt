@@ -5,14 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rydeit.io.databinding.FragmentHomeBinding
+import com.rydeit.io.ui.MainViewModel
 import com.rydeit.io.ui.adapter.PlanCardAdapter
 
 class HomeFragment : Fragment() {
 
-    private lateinit var viewModel: HomeViewModel
+    private val viewModel: MainViewModel by activityViewModels()
     private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
@@ -25,7 +27,6 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -51,7 +52,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun registerLifeCycleObserver() {
-        viewModel.planList.observe(viewLifecycleOwner) {
+        viewModel.planListLiveData.observe(viewLifecycleOwner) {
             adapter.updateData(it)
         }
 

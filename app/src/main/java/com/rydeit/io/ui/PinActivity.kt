@@ -124,7 +124,7 @@ class PinActivity : AppCompatActivity() {
         binding.tvErrorMsg.visibility = if (pinInputType.isShowErrorMsg) View.VISIBLE else View.GONE
         binding.resetPinButton.visibility = if (pinInputType.isShowResetPinButton) View.VISIBLE else View.GONE
         binding.clReLogin.visibility = if (pinInputType.isShowReLoginButton) View.VISIBLE else View.GONE
-        binding.loginTopBar.binding.backButton.visibility = if (pinInputType.isShowBackButton) View.VISIBLE else View.GONE
+        binding.loginTopBar.binding.navTopBar.backButton.visibility = if (pinInputType.isShowBackButton) View.VISIBLE else View.GONE
     }
 
     private fun reLogin() {

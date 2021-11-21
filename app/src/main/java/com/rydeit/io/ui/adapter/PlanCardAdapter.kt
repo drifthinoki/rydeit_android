@@ -9,10 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rydeit.io.R
 import com.rydeit.io.api.responses.Plan
 import com.rydeit.io.databinding.ViewPlanCardBinding
-import java.text.NumberFormat
+import com.rydeit.io.ui.WebViewActivity
 
-enum class PlanCurrencyType {
-    USDT, USDC, ETH
+enum class CurrencyType {
+    USDT, USDC, ETH;
+
+    val icon: Int
+        get() {
+            return when(this) {
+                USDT -> R.drawable.ic_usdt
+                USDC -> R.drawable.ic_usdc
+                ETH -> R.drawable.ic_eth
+            }
+        }
 }
 
 class PlanCardAdapter(private val context: Context,
@@ -31,11 +40,11 @@ class PlanCardAdapter(private val context: Context,
                     context.startActivity(intent)
                 }
 
-                plan.planCurrencyTypeList.forEach {
+                plan.currencyTypeList.forEach {
                     when(it) {
-                        PlanCurrencyType.USDT -> binding.iconUsdt.visibility = View.VISIBLE
-                        PlanCurrencyType.USDC -> binding.iconUsdc.visibility = View.VISIBLE
-                        PlanCurrencyType.ETH -> binding.iconEth.visibility = View.VISIBLE
+                        CurrencyType.USDT -> binding.iconUsdt.visibility = View.VISIBLE
+                        CurrencyType.USDC -> binding.iconUsdc.visibility = View.VISIBLE
+                        CurrencyType.ETH -> binding.iconEth.visibility = View.VISIBLE
                     }
                 }
                 binding.clProgressBar.visibility = if (plan.needProgress) View.VISIBLE else View.GONE

@@ -52,18 +52,30 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <!--頁面註解(藍黑字)-->
-    <style name="TextAppearance.Rydeit.Caption" parent="TextAppearance.MaterialComponents.Caption">
+    <!--頁面註解(灰字)-->
+    <style name="TextAppearance.Rydeit.CaptionGrey" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:textColor">@color/neutrals_300</item>
         <item name="android:textSize">12sp</item>
     </style>
 
-    <!--Dialog頁面內文(灰字)-->
+    <!--頁面註解(藍灰字)-->
+    <style name="TextAppearance.Rydeit.CaptionGreyBlue" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/gb_500</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!--Dialog頁面內文(藍灰字)-->
     <style name="TextAppearance.Rydeit.Dialog.Body" parent="TextAppearance.MaterialComponents.Body1">
         <item name="android:textColor">@color/gb_500</item>
         <item name="android:textSize">14sp</item>
     </style>
 
+    <!--Bottom Sheet頁面, 選項title-->
+    <style name="TextAppearance.Rydeit.BottomSheetTitle" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
 
 
     <!--輸入框標題-->
@@ -179,5 +191,14 @@
         <item name="android:drawablePadding">4dp</item>
     </style>
 
+    <!--BottomSheetDialogFragment圓角效果-->
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/RoundedBottomSheetStyle</item>
+    </style>
+
+    <style name="RoundedBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_rounded_background</item>
+    </style>
 
 </resources>

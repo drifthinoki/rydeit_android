@@ -1,9 +1,10 @@
-package com.rydeit.io.ui.adapter
+package com.rydeit.io.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.rydeit.io.R
 import com.rydeit.io.databinding.ActivityWebViewBinding
+import com.rydeit.io.ui.adapter.PlanCardAdapter
 
 class WebViewActivity : AppCompatActivity() {
 

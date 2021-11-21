@@ -24,7 +24,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main_top_bar"
             android:layout_width="0dp"
-            android:layout_height="@dimen/rydeit_home_top_bar_height"
+            android:layout_height="@dimen/actionBarLarge"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/guideline_v_5"
             app:layout_constraintRight_toRightOf="@id/guideline_v_95"

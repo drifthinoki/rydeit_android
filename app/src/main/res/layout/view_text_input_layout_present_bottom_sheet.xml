@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_email"
+        android:textAppearance="@style/TextAppearance.Rydeit.TextInputLayout.Title"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout"
+            style="@style/Widget.Rydeit.TextInputLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="5dp"
+            app:hintEnabled="false"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_arrow"
+            app:endIconTint="@color/password_toggle_color_selector">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/rydeit_text_input_layout_height"
+                android:enabled="false"
+                android:letterSpacing="0.1"
+                android:paddingVertical="12dp"
+                android:textColor="@color/gb_500"
+                android:textColorHint="@color/gb_400"
+                android:textSize="15sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/custom_edittext"
+            app:layout_constraintTop_toTopOf="@id/text_input_layout"
+            app:layout_constraintBottom_toBottomOf="@id/text_input_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="14dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/custom_edittext_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintDimensionRatio="1"
+                android:src="@drawable/ic_usdc"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/custom_edittext_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USDC"
+                app:layout_constraintLeft_toRightOf="@id/custom_edittext_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/gb_500"
+                android:textSize="15sp"
+                android:letterSpacing="0.1"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="@dimen/rydeit_text_input_layout_height"
+            android:background="@color/blue_200"
+            app:layout_constraintTop_toTopOf="@id/text_input_layout"
+            app:layout_constraintRight_toLeftOf="@id/edit_text_button"
+            android:visibility="gone"/>
+        <Button
+            android:id="@+id/edit_text_button"
+            style="@style/Widget.Rydeit.Button.TextButton.EditTextButton"
+            android:layout_margin="1dp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/rydeit_text_input_layout_height"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_input_layout"
+            app:layout_constraintWidth_percent="0.35"
+            android:text="按鈕"
+            android:visibility="gone"
+            android:backgroundTint="@android:color/transparent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

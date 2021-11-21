@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--登入, 註冊頁面-->
-    <dimen name="rydeit_text_input_layout_height">40dp</dimen>
-    <dimen name="rydrit_login_top_bar_spacing">30dp</dimen>
+    <!--APP-->
+    <dimen name="actionBarLarge">80dp</dimen>
+    <dimen name="actionBarNormal">48dp</dimen>
+
+    <!--custom text field-->
+    <dimen name="rydeit_text_input_layout_height">44dp</dimen>
     <dimen name="rydeit_text_input_spacing">10dp</dimen>
+
+    <!--登入, 註冊頁面-->
+    <dimen name="rydrit_login_top_bar_spacing">30dp</dimen>
     <dimen name="rydrit_action_button_spacing">20dp</dimen>
     <dimen name="rydeit_second_action_button_spacing">10dp</dimen>
     <dimen name="rydeit_button_min_height">46dp</dimen>
@@ -16,9 +22,7 @@
     <dimen name="rydeit_pin_action_button_spacing">20dp</dimen>
 
 
-
     <!--首頁-->
-    <dimen name="rydeit_home_top_bar_height">80dp</dimen>
     <dimen name="stable_coin_card_corner_radius">10dp</dimen>
     <dimen name="plan_card_corner_radius">6dp</dimen>
 
@@ -32,6 +36,17 @@
     <!--Step Button-->
     <dimen name="rydeit_step_button_padding">30dp</dimen>
     <dimen name="rydeit_step_button_min_height">48dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+
+    <!--申購-->
+    <dimen name="rydeit_purchase_card_padding">15dp</dimen>
+    <dimen name="rydeit_purchase_text_input_spacing">25dp</dimen>
+
+    <!--Bottom Sheet-->
+    <dimen name="rydeit_bottom_sheet_top_rec_round_radius">15dp</dimen>
+    <dimen name="rydeit_bottom_sheet_item_height">70dp</dimen>
+
 
 
 </resources>

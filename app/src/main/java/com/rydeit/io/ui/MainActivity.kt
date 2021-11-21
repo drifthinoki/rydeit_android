@@ -8,10 +8,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.rydeit.io.MainViewModel
 import com.rydeit.io.R
 import com.rydeit.io.databinding.ActivityMainBinding
-import com.rydeit.io.helper.UserHelper
 
 
 class MainActivity : AppCompatActivity() {

@@ -22,8 +22,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_top_bar"
         android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginTop="20dp"
+        android:layout_height="@dimen/actionBarLarge"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/guideline_v_2"
         app:layout_constraintRight_toRightOf="@id/guideline_v_98">
@@ -45,6 +44,7 @@
             android:id="@+id/image_brand"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.3"
             app:layout_constraintDimensionRatio="200:53"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
