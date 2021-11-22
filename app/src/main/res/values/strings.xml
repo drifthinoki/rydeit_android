@@ -111,5 +111,17 @@
     <string name="bottom_sheet_title_choose_plan">選擇方案</string>
     <string name="bottom_sheet_title_choose_currency">選擇幣種</string>
     <string name="bottom_sheet_title_capital_detail">資金明細</string>
+    <string name="purchase_form_title_step2">第二步－權利義務須知</string>
+    <string name="purchase_form_description_step2">請確認「申購服務約定條款」</string>
+    <string name="field_title_plan_name">申購標的</string>
+    <string name="purchase_field_title_plan_name">申購標的</string>
+    <string name="purchase_field_title_manage_fee">管理費</string>
+    <string name="purchase_field_title_performance_fee">績效費</string>
+    <string name="purchase_field_title_invest_target">方案投放標的</string>
+    <string name="purchase_field_title_invest_start_time">方案開始時間</string>
+    <string name="purchase_field_title_insurance">已投保理賠險</string>
+    <string name="purchase_field_title_stop_loss">此方案止損點</string>
+    <string name="agree_purchase_online_term">我已閱讀且同意 Rydeit 發財車</string>
+    <string name="purchse_online_term">線上申購方案服務約定條款</string>
 
 </resources>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+
+    <TextView
+        style="@style/TextAppearance.Rydeit.BottomSheetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/purchase_form_title_step2"
+        android:layout_gravity="left"/>
+
+    <TextView
+        style="@style/TextAppearance.Rydeit.Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/purchase_form_description_step2"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/white_rec_round_large"
+        android:padding="@dimen/rydeit_purchase_card_padding_large"
+        android:layout_marginTop="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/field_title_plan_name"
+                style="@style/TextAppearance.Rydeit.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:text="@string/purchase_field_title_plan_name"
+                android:layout_weight="@dimen/item_purchase_detail_field_title_weight"/>
+
+            <TextView
+                android:id="@+id/field_msg_plan_name"
+                style="@style/TextAppearance.Rydeit.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/guideline_v_40"
+                android:text="DeFi 挖礦列車"
+                android:layout_weight="@dimen/item_purchase_detail_field_content_weight"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginTop="@dimen/item_purchase_detail_spacing">
+
+            <TextView
+                android:id="@+id/field_title_manage_fee"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldTitle"
+                android:text="@string/purchase_field_title_manage_fee"/>
+
+            <TextView
+                android:id="@+id/field_msg_manage_fee"
+                style="@style/TextAppearance.Rydeit.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/guideline_v_40"
+                android:text="DeFi 挖礦列車"
+                android:layout_weight="@dimen/item_purchase_detail_field_title_weight"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginTop="@dimen/item_purchase_detail_spacing">
+
+            <TextView
+                android:id="@+id/field_title_performance_fee"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldTitle"
+                android:text="@string/purchase_field_title_performance_fee"/>
+
+            <TextView
+                android:id="@+id/field_msg_performance_fee"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldContent"
+                android:text="DeFi 挖礦列車" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginTop="@dimen/item_purchase_detail_spacing">
+
+            <TextView
+                android:id="@+id/field_title_invest_target"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldTitle"
+                android:text="@string/purchase_field_title_invest_target"/>
+
+            <TextView
+                android:id="@+id/field_msg_invest_target"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldContent"
+                android:text="DeFi 挖礦列車"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginTop="@dimen/item_purchase_detail_spacing">
+
+            <TextView
+                android:id="@+id/field_title_invest_start_time"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldTitle"
+                android:text="@string/purchase_field_title_invest_start_time"/>
+
+            <TextView
+                android:id="@+id/field_msg_invest_start_time"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldContent"
+                android:text="DeFi 挖礦列車"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider_line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/cl_progress_bar"
+            android:background="@color/gb_200"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginTop="@dimen/item_purchase_detail_section_spacing">
+
+            <TextView
+                android:id="@+id/field_title_insurance"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldTitle"
+                android:text="@string/purchase_field_title_insurance"/>
+
+            <TextView
+                android:id="@+id/field_msg_insurance"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldContent"
+                android:text="DeFi 挖礦列車"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginTop="@dimen/item_purchase_detail_spacing">
+
+            <TextView
+                android:id="@+id/field_title_stop_loss"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldTitle"
+                android:text="@string/purchase_field_title_stop_loss"/>
+
+            <TextView
+                android:id="@+id/field_msg_invest_stop_loss"
+                style="@style/TextAppearance.Rydeit.PurchaseFieldContent"
+                android:text="DeFi 挖礦列車"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider_line2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gb_200"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_purchase_detail_section_spacing">
+
+            <CheckBox
+                android:id="@+id/checkbox_agree_purchase_online_term"
+                style="@style/Widget.Rydeit.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:checked="false"
+                android:minHeight="0dp"
+                android:text="@string/agree_purchase_online_term"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/privacy_term_button"
+                style="@style/Widget.Rydeit.Button.TextButton.Superlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/purchse_online_term"
+                app:layout_constraintTop_toBottomOf="@id/checkbox_agree_purchase_online_term"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="15dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

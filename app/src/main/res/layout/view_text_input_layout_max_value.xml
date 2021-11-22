@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/rydeit_text_input_layout_height"
                 android:hint="@string/purchase_amount_hint"
-                android:inputType="text"
+                android:inputType="number"
                 android:letterSpacing="0.1"
                 android:paddingVertical="12dp"
                 android:textColor="@color/gb_500"

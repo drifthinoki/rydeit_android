@@ -27,8 +27,9 @@ class MainViewModel():ViewModel() {
     val planListLiveData: LiveData<List<Plan>> = _planListLiveData
     private var planList: List<Plan>? = null
 
-    // Bottom sheet
-    var userPurchaseItem = PurchaseItem()
+    //Purchase
+    private var userPurchaseItem = PurchaseItem()
+    var isPurchaseInputValid: MutableLiveData<Boolean> = MutableLiveData(false)
     var selectablePlanList: List<SelectablePlanItem> = emptyList()
     val selectableCurrencyList = listOf(CurrencyType.USDT, CurrencyType.USDC, CurrencyType.ETH).map { SelectCurrencyItem(it) }
 
@@ -51,18 +52,18 @@ class MainViewModel():ViewModel() {
                         }else {
                             it.name + " ( 已額滿 )"
                         }
-                        SelectablePlanItem(formatName, it.stage == 1)
+                        SelectablePlanItem(formatName, it, it.stage == 1)
                     }
             }
     }
 
-    fun updateUserPurchaseItem(listType: ListBottomSheetType, index: Int) {
-        if (planList.isNullOrEmpty()) throw IllegalStateException()
-        when(listType) {
-            ListBottomSheetType.ChoosePlan -> userPurchaseItem.plan = planList!![index]
-            ListBottomSheetType.ChooseCurrency -> userPurchaseItem.currencyType = selectableCurrencyList[index].type
-        }
+    fun updateUserPurchaseItem(plan: Plan? = null, currencyType: CurrencyType? = null, amount:Int? = null) {
+        plan?.let { userPurchaseItem.plan = it }
+        currencyType?.let { userPurchaseItem.currencyType = it }
+        amount?.let { userPurchaseItem.amount = it }
+
         if (Constants.DEBUG) Log.e(TAG, "user purchase item: $userPurchaseItem")
+        isPurchaseInputValid.postValue(userPurchaseItem.isValid)
     }
 
 
@@ -75,4 +76,7 @@ class MainViewModel():ViewModel() {
 
 }
 
-data class PurchaseItem(var plan: Plan? = null, var currencyType: CurrencyType? = null, val amount:Int? = null)
+data class PurchaseItem(var plan: Plan? = null, var currencyType: CurrencyType? = null, var amount:Int? = null) {
+    val isValid: Boolean
+        get() = plan != null && currencyType != null && amount != null
+}

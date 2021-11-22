@@ -77,6 +77,20 @@
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
+    <!--購買 step2 欄位標題-->
+    <style name="TextAppearance.Rydeit.PurchaseFieldTitle" parent="TextAppearance.Rydeit.Body2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">@dimen/item_purchase_detail_field_title_weight</item>
+    </style>
+
+    <!--購買 step2 欄位內容-->
+    <style name="TextAppearance.Rydeit.PurchaseFieldContent" parent="TextAppearance.Rydeit.Body">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">@dimen/item_purchase_detail_field_content_weight</item>
+    </style>
+
 
     <!--輸入框標題-->
     <style name="TextAppearance.Rydeit.TextInputLayout.Title" parent="TextAppearance.MaterialComponents.Subtitle2">

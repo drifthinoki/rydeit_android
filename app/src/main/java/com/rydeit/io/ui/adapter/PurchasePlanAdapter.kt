@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rydeit.io.R
+import com.rydeit.io.api.responses.Plan
 import com.rydeit.io.databinding.ItemPurchasePlanBinding
 import java.lang.IndexOutOfBoundsException
 
@@ -83,6 +84,6 @@ class SelectOnlyOneNameItemList(private val selectablePlanItemList: List<Selecta
 }
 
 
-class SelectablePlanItem(val name: String, val isSelectable: Boolean, var isSelected: Boolean = false)
+class SelectablePlanItem(val name: String, val plan: Plan, val isSelectable: Boolean, var isSelected: Boolean = false)
 
 

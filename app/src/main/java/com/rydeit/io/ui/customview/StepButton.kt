@@ -35,34 +35,34 @@ class StepButton @JvmOverloads constructor(
             0, 0
         )
 
-        val step = attributes.getInt(R.styleable.StepButton_step, 0)
+        val step = attributes.getInt(R.styleable.StepButton_step, 1)
         refreshUI(step)
     }
 
     fun refreshUI(step: Int) {
         when(step) {
-            0 -> {
+            1 -> {
                 binding.goBackButton.visibility = View.GONE
-                binding.nextButton.isEnabled = false
+                binding.nextButton.isEnabled = nextButtonEnabled
                 binding.nextButton.text = context.resources.getString(R.string.next_step_button)
                 binding.progressBar.visibility = View.VISIBLE
                 binding.progressBar.progress = 25
-            }
-            1 -> {
-                binding.goBackButton.visibility = View.VISIBLE
-                binding.nextButton.isEnabled = true
-                binding.nextButton.text = context.resources.getString(R.string.next_step_button)
-                binding.progressBar.visibility = View.VISIBLE
-                binding.progressBar.progress = 50
             }
             2 -> {
                 binding.goBackButton.visibility = View.VISIBLE
                 binding.nextButton.isEnabled = true
                 binding.nextButton.text = context.resources.getString(R.string.next_step_button)
                 binding.progressBar.visibility = View.VISIBLE
-                binding.progressBar.progress = 75
+                binding.progressBar.progress = 50
             }
             3 -> {
+                binding.goBackButton.visibility = View.VISIBLE
+                binding.nextButton.isEnabled = true
+                binding.nextButton.text = context.resources.getString(R.string.next_step_button)
+                binding.progressBar.visibility = View.VISIBLE
+                binding.progressBar.progress = 75
+            }
+            4 -> {
                 binding.goBackButton.visibility = View.VISIBLE
                 binding.nextButton.isEnabled = true
                 binding.nextButton.text = context.resources.getString(R.string.finish_register)

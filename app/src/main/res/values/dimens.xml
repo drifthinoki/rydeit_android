@@ -40,12 +40,18 @@
     <dimen name="list_item_spacing_half">8dp</dimen>
 
     <!--申購-->
-    <dimen name="rydeit_purchase_card_padding">15dp</dimen>
+    <dimen name="rydeit_purchase_card_padding_small">15dp</dimen>
+    <dimen name="rydeit_purchase_card_padding_large">25dp</dimen>
     <dimen name="rydeit_purchase_text_input_spacing">25dp</dimen>
+    <dimen name="purchase_card_corner_radius">15dp</dimen>
+    <item name="item_purchase_detail_field_title_weight" type="dimen" format="float">0.4</item>
+    <item name="item_purchase_detail_field_content_weight" type="dimen" format="float">0.6</item>
 
     <!--Bottom Sheet-->
     <dimen name="rydeit_bottom_sheet_top_rec_round_radius">15dp</dimen>
     <dimen name="rydeit_bottom_sheet_item_height">70dp</dimen>
+    <dimen name="item_purchase_detail_spacing">20dp</dimen>
+    <dimen name="item_purchase_detail_section_spacing">20dp</dimen>
 
 
 
